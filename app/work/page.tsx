@@ -28,6 +28,7 @@ const PROJECTS = [
     { id: 14, title: "매치스x미국감자협회", category: "Event", client: "미국감자협회", youtubeId: "c916GVygOss", image: "/images/project-us-potatoes.png", link: "https://youtu.be/c916GVygOss" },
     { id: 15, title: "윌로드 x 미국감자협회", category: "Event", client: "미국감자협회", youtubeId: "h92jemAZAWc", image: "/images/project-wilload-us-potatoes.png", link: "https://youtu.be/h92jemAZAWc" },
     { id: 18, title: "마비노기 2023 겨울 라이브 쇼케이스", category: "Live", client: "넥슨", youtubeId: "1jx6YYNfv-8", image: "/images/project-mabinogi.png", link: "https://youtu.be/1jx6YYNfv-8" },
+    { id: 19, title: "메이플스토리 팡글대전", category: "Live", client: "넥슨", youtubeId: "tr0OKOiv8eA", image: "/images/project-maplestory-panggle.png", link: "https://youtu.be/tr0OKOiv8eA" },
 ];
 
 export default function WorkPage() {
