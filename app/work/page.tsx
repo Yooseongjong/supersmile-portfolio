@@ -22,7 +22,7 @@ const PROJECTS = [
 
     { id: 9, title: "Coca Cola Zero", category: "Branded", client: "Coca Cola" },
     { id: 10, title: "Web Series Pilot", category: "Entertainment", client: "Netflix" },
-    { id: 11, title: "Street Dance Battle", category: "Live", client: "Mnet" },
+    { id: 11, title: "마비노기 2025 겨울 쇼케이스 OAP", category: "Live", client: "넥슨", youtubeId: "7wJR_P7uYHM", image: "/images/project-mabinogi-2025.png", link: "https://youtu.be/7wJR_P7uYHM" },
 
     { id: 13, title: "Stylus 화보촬영", category: "Event", client: "Stylus", youtubeId: "Vk_L494o66A", image: "/images/project-stylus.png", link: "https://youtu.be/Vk_L494o66A" },
     { id: 14, title: "매치스x미국감자협회", category: "Event", client: "미국감자협회", youtubeId: "c916GVygOss", image: "/images/project-us-potatoes.png", link: "https://youtu.be/c916GVygOss" },
