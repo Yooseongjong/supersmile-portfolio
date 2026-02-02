@@ -33,7 +33,7 @@ export default function AudioProvider({ children }: { children: React.ReactNode 
                         audioContextRef.current = new AudioContext();
                     }
                 }
-                setHasInteracted(true);
+                // setHasInteracted(true); // Removed as state is unused
             }
         };
 
