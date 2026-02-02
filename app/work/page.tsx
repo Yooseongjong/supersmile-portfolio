@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 import Footer from '@/components/layout/Footer';
 
 // Dummy Categories
-const CATEGORIES = ["ALL", "Branded", "Entertainment", "Live", "Event"];
+const CATEGORIES = ["ALL", "Entertainment", "Branded", "Live", "Event"];
 
 // Dummy Data
 const PROJECTS = [
