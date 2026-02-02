@@ -24,6 +24,7 @@ const PROJECTS = [
     { id: 12, title: "Product Launch", category: "Event", client: "LG" },
     { id: 13, title: "Stylus 화보촬영", category: "Event", client: "Stylus", youtubeId: "Vk_L494o66A", image: "/images/project-stylus.png", link: "https://youtu.be/Vk_L494o66A" },
     { id: 14, title: "매치스x미국감자협회", category: "Event", client: "미국감자협회", youtubeId: "c916GVygOss", image: "/images/project-us-potatoes.png", link: "https://youtu.be/c916GVygOss" },
+    { id: 15, title: "윌로드 x 미국감자협회", category: "Event", client: "미국감자협회", youtubeId: "h92jemAZAWc", image: "/images/project-wilload-us-potatoes.png", link: "https://youtu.be/h92jemAZAWc" },
 ];
 
 export default function WorkPage() {
