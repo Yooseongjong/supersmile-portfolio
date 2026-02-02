@@ -67,7 +67,7 @@ export default function RootLayout({
             <body className="font-sans bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-black">
                 <SmoothScrollProvider>
                     <AudioProvider>
-                        <Preloader />
+                        {/* <Preloader /> */}
                         <CustomCursor />
                         <Navbar />
                         {children}
