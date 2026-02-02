@@ -80,7 +80,7 @@ export default function Hero() {
             >
                 <div className="relative w-[80vw] md:w-[45vw] aspect-square max-w-[800px] md:translate-x-10">
                     <Image
-                        src="/images/hero-smiley-char.png"
+                        src="/images/hero-smiley-char-new.png"
                         alt="SuperSmile Character"
                         fill
                         className="object-contain drop-shadow-2xl"
