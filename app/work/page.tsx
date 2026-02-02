@@ -23,6 +23,7 @@ const PROJECTS = [
     { id: 11, title: "Street Dance Battle", category: "Live", client: "Mnet" },
     { id: 12, title: "Product Launch", category: "Event", client: "LG" },
     { id: 13, title: "Stylus 화보촬영", category: "Event", client: "Stylus", youtubeId: "Vk_L494o66A", image: "/images/project-stylus.png", link: "https://youtu.be/Vk_L494o66A" },
+    { id: 14, title: "매치스x미국감자협회", category: "Event", client: "미국감자협회", youtubeId: "c916GVygOss", image: "/images/project-us-potatoes.png", link: "https://youtu.be/c916GVygOss" },
 ];
 
 export default function WorkPage() {
