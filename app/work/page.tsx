@@ -20,7 +20,7 @@ const PROJECTS = [
     { id: 6, title: "Late Night Show", category: "Entertainment", client: "TVN" },
     { id: 7, title: "AFK 슬기로운 아레나생활", category: "Live", client: "AFK아레나", youtubeId: "MiPtakEMKqw", image: "/images/project-afk-arena.png", link: "https://youtu.be/MiPtakEMKqw" },
 
-    { id: 9, title: "Coca Cola Zero", category: "Branded", client: "Coca Cola" },
+    { id: 9, title: "메이플x글자네pc방 실황 모음.ZIP", category: "Branded", client: "넥슨", youtubeId: "X8XgMMpq6xU", image: "/images/project-maple-geulja.png", link: "https://youtu.be/X8XgMMpq6xU" },
     { id: 10, title: "Web Series Pilot", category: "Entertainment", client: "Netflix" },
     { id: 11, title: "마비노기 2025 겨울 쇼케이스 OAP", category: "Live", client: "넥슨", youtubeId: "7wJR_P7uYHM", image: "/images/project-mabinogi-2025.png", link: "https://youtu.be/7wJR_P7uYHM" },
 
