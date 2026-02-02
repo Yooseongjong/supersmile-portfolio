@@ -10,6 +10,7 @@ const CATEGORIES = ["ALL", "Entertainment", "Branded", "Live", "Event"];
 
 // Dummy Data
 const PROJECTS = [
+    { id: 20, title: "\"눈물을 마시는 새\" 아트북 비하인드 씬", category: "Branded", client: "KRAFTON", youtubeId: "SRDr5jMZziU", image: "/images/project-three-birds.png", link: "https://youtu.be/SRDr5jMZziU" },
     { id: 1, title: "Samsung Galaxy S24", category: "Branded", client: "Samsung" },
     { id: 2, title: "Neon City", category: "Entertainment", client: "YouTube Original" },
     { id: 3, title: "2023 One Hoop", category: "Live", client: "MGTV", youtubeId: "k5hDsLhtkL8", image: "/images/project-one-hoop.png", link: "https://youtu.be/k5hDsLhtkL8" },
