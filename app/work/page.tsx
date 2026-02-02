@@ -22,6 +22,7 @@ const PROJECTS = [
     { id: 10, title: "Web Series Pilot", category: "Entertainment", client: "Netflix" },
     { id: 11, title: "Street Dance Battle", category: "Live", client: "Mnet" },
     { id: 12, title: "Product Launch", category: "Event", client: "LG" },
+    { id: 13, title: "Stylus 화보촬영", category: "Event", client: "Stylus", youtubeId: "Vk_L494o66A", image: "https://img.youtube.com/vi/Vk_L494o66A/maxresdefault.jpg", link: "https://youtu.be/Vk_L494o66A" },
 ];
 
 export default function WorkPage() {
@@ -30,14 +31,15 @@ export default function WorkPage() {
 
     const filteredProjects = selectedCategory === "ALL"
         ? PROJECTS
+        : PROJECTS.filter(p => p.category === selectedCategory);
 
     useEffect(() => {
-            const handleEsc = (e: KeyboardEvent) => {
-                if (e.key === 'Escape') setSelectedVideo(null);
-            };
-            window.addEventListener('keydown', handleEsc);
-            return () => window.removeEventListener('keydown', handleEsc);
-        }, []);
+        const handleEsc = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') setSelectedVideo(null);
+        };
+        window.addEventListener('keydown', handleEsc);
+        return () => window.removeEventListener('keydown', handleEsc);
+    }, []);
 
     return (
         <main className="min-h-screen bg-[#050505] text-white pt-24">
