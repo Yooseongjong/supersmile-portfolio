@@ -19,11 +19,11 @@ const PROJECTS = [
     { id: 5, title: "Nike Air Max", category: "Branded", client: "Nike" },
     { id: 6, title: "Late Night Show", category: "Entertainment", client: "TVN" },
     { id: 7, title: "Live Concert 2023", category: "Live", client: "Melon" },
-    { id: 8, title: "Corporate Awards", category: "Event", client: "Hyundai" },
+
     { id: 9, title: "Coca Cola Zero", category: "Branded", client: "Coca Cola" },
     { id: 10, title: "Web Series Pilot", category: "Entertainment", client: "Netflix" },
     { id: 11, title: "Street Dance Battle", category: "Live", client: "Mnet" },
-    { id: 12, title: "Product Launch", category: "Event", client: "LG" },
+
     { id: 13, title: "Stylus 화보촬영", category: "Event", client: "Stylus", youtubeId: "Vk_L494o66A", image: "/images/project-stylus.png", link: "https://youtu.be/Vk_L494o66A" },
     { id: 14, title: "매치스x미국감자협회", category: "Event", client: "미국감자협회", youtubeId: "c916GVygOss", image: "/images/project-us-potatoes.png", link: "https://youtu.be/c916GVygOss" },
     { id: 15, title: "윌로드 x 미국감자협회", category: "Event", client: "미국감자협회", youtubeId: "h92jemAZAWc", image: "/images/project-wilload-us-potatoes.png", link: "https://youtu.be/h92jemAZAWc" },
