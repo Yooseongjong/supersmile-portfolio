@@ -11,20 +11,13 @@ const CATEGORIES = ["ALL", "Entertainment", "Branded", "Live", "Event"];
 // Dummy Data
 const PROJECTS = [
     { id: 20, title: "\"눈물을 마시는 새\" 아트북 비하인드 씬", category: "Branded", client: "KRAFTON", youtubeId: "SRDr5jMZziU", image: "/images/project-three-birds.png", link: "https://youtu.be/SRDr5jMZziU" },
-    { id: 1, title: "Samsung Galaxy S24", category: "Branded", client: "Samsung" },
-    { id: 2, title: "Neon City", category: "Entertainment", client: "YouTube Original" },
     { id: 3, title: "2023 One Hoop", category: "Live", client: "MGTV", youtubeId: "k5hDsLhtkL8", image: "/images/project-one-hoop.png", link: "https://youtu.be/k5hDsLhtkL8" },
     { id: 17, title: "2017, 2018 World DJ Festival", category: "Event", client: "SBSMTV", youtubeId: "PYAMWgzKMuk", image: "/images/project-wdjf.png", link: "https://youtu.be/PYAMWgzKMuk" },
     { id: 4, title: "World ID KOREA 오픈 행사", category: "Event", client: "World ID", youtubeId: "uLk3-_WCa2Y", image: "/images/project-world-id.png", link: "https://www.youtube.com/watch?v=uLk3-_WCa2Y" },
     { id: 16, title: "현대카드TECH TALK", category: "Event", client: "현대카드x원티드", youtubeId: "tk_8n500hi0", image: "/images/project-hyundaicard-techtalk.png", link: "https://youtu.be/tk_8n500hi0" },
-    { id: 5, title: "Nike Air Max", category: "Branded", client: "Nike" },
-    { id: 6, title: "Late Night Show", category: "Entertainment", client: "TVN" },
     { id: 7, title: "AFK 슬기로운 아레나생활", category: "Live", client: "AFK아레나", youtubeId: "MiPtakEMKqw", image: "/images/project-afk-arena.png", link: "https://youtu.be/MiPtakEMKqw" },
-
     { id: 9, title: "메이플x글자네pc방 실황 모음.ZIP", category: "Branded", client: "넥슨", youtubeId: "X8XgMMpq6xU", image: "/images/project-maple-geulja.png", link: "https://youtu.be/X8XgMMpq6xU" },
-    { id: 10, title: "Web Series Pilot", category: "Entertainment", client: "Netflix" },
     { id: 11, title: "마비노기 2025 겨울 쇼케이스 OAP", category: "Live", client: "넥슨", youtubeId: "7wJR_P7uYHM", image: "/images/project-mabinogi-2025.png", link: "https://youtu.be/7wJR_P7uYHM" },
-
     { id: 13, title: "Stylus 화보촬영", category: "Event", client: "Stylus", youtubeId: "Vk_L494o66A", image: "/images/project-stylus.png", link: "https://youtu.be/Vk_L494o66A" },
     { id: 14, title: "매치스x미국감자협회", category: "Event", client: "미국감자협회", youtubeId: "c916GVygOss", image: "/images/project-us-potatoes.png", link: "https://youtu.be/c916GVygOss" },
     { id: 15, title: "윌로드 x 미국감자협회", category: "Event", client: "미국감자협회", youtubeId: "h92jemAZAWc", image: "/images/project-wilload-us-potatoes.png", link: "https://youtu.be/h92jemAZAWc" },
