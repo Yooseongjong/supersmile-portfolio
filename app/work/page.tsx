@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import Footer from '@/components/layout/Footer';
@@ -26,14 +26,22 @@ const PROJECTS = [
 
 export default function WorkPage() {
     const [selectedCategory, setSelectedCategory] = useState("ALL");
+    const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
     const filteredProjects = selectedCategory === "ALL"
         ? PROJECTS
-        : PROJECTS.filter(p => p.category === selectedCategory);
+
+    useEffect(() => {
+            const handleEsc = (e: KeyboardEvent) => {
+                if (e.key === 'Escape') setSelectedVideo(null);
+            };
+            window.addEventListener('keydown', handleEsc);
+            return () => window.removeEventListener('keydown', handleEsc);
+        }, []);
 
     return (
         <main className="min-h-screen bg-[#050505] text-white pt-24">
-            <div className="container mx-auto px-6 py-12">
+            <div className="container mx-auto px-6 py-12 relative z-10">
                 <div className="flex flex-col lg:flex-row gap-12">
                     {/* Sidebar Filter (Left Column) */}
                     <div className="lg:w-1/5">
@@ -71,7 +79,19 @@ export default function WorkPage() {
                                         exit={{ opacity: 0, scale: 0.9 }}
                                         transition={{ duration: 0.3 }}
                                         key={project.id}
-                                        onClick={() => project.link && window.open(project.link, '_blank')}
+                                        onClick={() => {
+                                            if (project.youtubeId) {
+                                                setSelectedVideo(project.youtubeId);
+                                            } else if (project.link) {
+                                                // Extract ID if possible or just fallback to link
+                                                const match = project.link.match(/v=([^&]+)/);
+                                                if (match) {
+                                                    setSelectedVideo(match[1]);
+                                                } else {
+                                                    window.open(project.link, '_blank');
+                                                }
+                                            }
+                                        }}
                                         className="group relative aspect-video bg-neutral-900 border border-white/5 overflow-hidden rounded-sm cursor-pointer hover:border-primary/50 transition-colors"
                                     >
                                         {/* Image or Placeholder Visual */}
@@ -106,6 +126,49 @@ export default function WorkPage() {
                     </div>
                 </div>
             </div>
+
+            {/* Video Modal */}
+            <AnimatePresence>
+                {selectedVideo && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-12 bg-black/90 backdrop-blur-sm"
+                    >
+                        {/* Backdrop Click to Close */}
+                        <div className="absolute inset-0" onClick={() => setSelectedVideo(null)} />
+
+                        {/* Close Button */}
+                        <button
+                            onClick={() => setSelectedVideo(null)}
+                            className="absolute top-8 right-8 text-white/50 hover:text-white transition-colors z-[60]"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+
+                        {/* Video Container */}
+                        <motion.div
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            className="relative w-full max-w-6xl aspect-video bg-black rounded-lg overflow-hidden shadow-2xl z-10"
+                        >
+                            <iframe
+                                className="w-full h-full"
+                                src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1&rel=0&modestbranding=1`}
+                                title="Project Video"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            />
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
             <Footer />
         </main>
     );
