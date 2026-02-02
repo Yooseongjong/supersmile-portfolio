@@ -22,7 +22,7 @@ const PROJECTS = [
     { id: 10, title: "Web Series Pilot", category: "Entertainment", client: "Netflix" },
     { id: 11, title: "Street Dance Battle", category: "Live", client: "Mnet" },
     { id: 12, title: "Product Launch", category: "Event", client: "LG" },
-    { id: 13, title: "Stylus 화보촬영", category: "Event", client: "Stylus", youtubeId: "Vk_L494o66A", image: "https://img.youtube.com/vi/Vk_L494o66A/maxresdefault.jpg", link: "https://youtu.be/Vk_L494o66A" },
+    { id: 13, title: "Stylus 화보촬영", category: "Event", client: "Stylus", youtubeId: "Vk_L494o66A", image: "/images/project-stylus.png", link: "https://youtu.be/Vk_L494o66A" },
 ];
 
 export default function WorkPage() {
