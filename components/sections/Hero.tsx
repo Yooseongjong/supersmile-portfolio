@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'fram
 import { ChevronDown } from 'lucide-react';
 import Button from '@/components/ui/Button';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect } from 'react';
 
 export default function Hero() {
@@ -119,9 +120,11 @@ export default function Hero() {
                     transition={{ duration: 0.5, delay: 0.6 }}
                     className="flex flex-col md:flex-row gap-6 mt-8 pointer-events-auto"
                 >
-                    <Button size="lg" variant="primary">
-                        View Our Work
-                    </Button>
+                    <Link href="/work">
+                        <Button size="lg" variant="primary">
+                            View Our Work
+                        </Button>
+                    </Link>
                     <Button
                         size="lg"
                         variant="outline"
