@@ -21,7 +21,7 @@ export const projects: Project[] = [
         id: 6,
         title: "호관원 홍보영상",
         category: "Branded",
-        image: "/assets/hoguanwon.png",
+        image: "/assets/hoguanwon.jpg",
         description: "호관원 브랜드의 프리미엄 가치를 전달하는 홍보영상입니다. 제품의 고급스러움과 효능을 시네마틱한 연출로 표현했습니다.",
         year: "2024",
         client: "호관원",
