@@ -13,7 +13,7 @@ const PROJECTS = [
     { id: 1, title: "Samsung Galaxy S24", category: "Branded", client: "Samsung" },
     { id: 2, title: "Neon City", category: "Entertainment", client: "YouTube Original" },
     { id: 3, title: "Summer Vibes Festival", category: "Live", client: "Red Bull" },
-    { id: 4, title: "World ID KOREA 오픈 행사", category: "Event", client: "Google", youtubeId: "uLk3-_WCa2Y" },
+    { id: 4, title: "World ID KOREA 오픈 행사", category: "Event", client: "World ID", youtubeId: "uLk3-_WCa2Y", image: "https://img.youtube.com/vi/uLk3-_WCa2Y/maxresdefault.jpg", link: "https://www.youtube.com/watch?v=uLk3-_WCa2Y" },
     { id: 5, title: "Nike Air Max", category: "Branded", client: "Nike" },
     { id: 6, title: "Late Night Show", category: "Entertainment", client: "TVN" },
     { id: 7, title: "Live Concert 2023", category: "Live", client: "Melon" },
@@ -63,7 +63,7 @@ export default function WorkPage() {
                             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
                         >
                             <AnimatePresence mode="popLayout">
-                                {filteredProjects.map((project) => (
+                                {filteredProjects.map((project: any) => (
                                     <motion.div
                                         layout
                                         initial={{ opacity: 0, scale: 0.9 }}
@@ -71,14 +71,27 @@ export default function WorkPage() {
                                         exit={{ opacity: 0, scale: 0.9 }}
                                         transition={{ duration: 0.3 }}
                                         key={project.id}
+                                        onClick={() => project.link && window.open(project.link, '_blank')}
                                         className="group relative aspect-video bg-neutral-900 border border-white/5 overflow-hidden rounded-sm cursor-pointer hover:border-primary/50 transition-colors"
                                     >
-                                        {/* Placeholder Image Visual */}
-                                        <div className="absolute inset-0 bg-gradient-to-br from-neutral-800 to-neutral-900 group-hover:scale-105 transition-transform duration-500 flex items-center justify-center">
-                                            <div className="font-display text-4xl font-bold text-white/5 group-hover:text-white/10 transition-colors">
-                                                {project.title.substring(0, 2).toUpperCase()}
+                                        {/* Image or Placeholder Visual */}
+                                        {project.image ? (
+                                            <div className="absolute inset-0">
+                                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                                <img
+                                                    src={project.image}
+                                                    alt={project.title}
+                                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                                />
+                                                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500" />
                                             </div>
-                                        </div>
+                                        ) : (
+                                            <div className="absolute inset-0 bg-gradient-to-br from-neutral-800 to-neutral-900 group-hover:scale-105 transition-transform duration-500 flex items-center justify-center">
+                                                <div className="font-display text-4xl font-bold text-white/5 group-hover:text-white/10 transition-colors">
+                                                    {project.title.substring(0, 2).toUpperCase()}
+                                                </div>
+                                            </div>
+                                        )}
 
                                         {/* Overlay Content */}
                                         <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center">
