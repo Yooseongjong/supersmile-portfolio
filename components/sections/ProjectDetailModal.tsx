@@ -1,19 +1,12 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, PlayCircle, Share2, Calendar, Award } from 'lucide-react';
+import { X, PlayCircle, Share2, Calendar, Award, Briefcase } from 'lucide-react';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
 
-interface Project {
-    id: number;
-    title: string;
-    category: string;
-    image: string;
-    description: string;
-    year: string;
-    awards?: string;
-}
+import { Project } from '@/lib/data';
+
 
 interface ProjectDetailModalProps {
     project: Project | null;
@@ -113,6 +106,12 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                                         <Calendar size={20} className="text-primary" />
                                         <span>Released: {project.year}</span>
                                     </div>
+                                    {project.client && (
+                                        <div className="flex items-center gap-4 text-white/80 border-b border-white/10 pb-4">
+                                            <Briefcase size={20} className="text-primary" />
+                                            <span>Client: {project.client}</span>
+                                        </div>
+                                    )}
                                     {project.awards && (
                                         <div className="flex items-center gap-4 text-white/80 border-b border-white/10 pb-4">
                                             <Award size={20} className="text-primary" />
@@ -128,9 +127,17 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                                 transition={{ delay: 0.6 }}
                                 className="flex gap-4 mt-8"
                             >
-                                <Button size="lg" variant="primary" className="flex-1">
-                                    Watch Film
-                                </Button>
+                                <a
+                                    href={project.youtubeLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex-1 flex"
+                                    onClick={(e) => !project.youtubeLink && e.preventDefault()}
+                                >
+                                    <Button size="lg" variant="primary" className="w-full">
+                                        Watch Film
+                                    </Button>
+                                </a>
                                 <button className="p-4 border border-white/20 rounded-none hover:bg-white hover:text-black transition-colors text-white">
                                     <Share2 size={24} />
                                 </button>
