@@ -39,7 +39,7 @@ export default function About() {
                                 variants={variants}
                                 transition={{ duration: 0.6, delay: 0.2 }}
                             >
-                                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">"장르의 경계를 지우는 크리에이티브"</h3>
+                                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">&quot;장르의 경계를 지우는 크리에이티브&quot;</h3>
                                 <p className="text-[#CCCCCC] leading-relaxed text-lg">
                                     방송 콘텐츠의 대중적 감각과 브랜드 필름의 시네마틱한 미학을 동시에 구현합니다.
                                     삼성, SK 등 국내 유수 대기업 및 주요 정부 기관과의 수많은 프로젝트가 우리의 역량을 증명합니다.
@@ -52,9 +52,9 @@ export default function About() {
                                 variants={variants}
                                 transition={{ duration: 0.6, delay: 0.4 }}
                             >
-                                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">"Visual Identity by Direct DI"</h3>
+                                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">&quot;Visual Identity by Direct DI&quot;</h3>
                                 <p className="text-[#CCCCCC] leading-relaxed text-lg">
-                                    남들과 다른 퀄리티의 비밀은 '마지막 1%'에 있습니다.
+                                    남들과 다른 퀄리티의 비밀은 &apos;마지막 1%&apos;에 있습니다.
                                     전문 PD가 직접 수행하는 섬세한 DI(색보정) 작업을 통해, 브랜드 고유의 트렌디하고 독보적인 톤앤매너를 완성합니다.
                                 </p>
                             </motion.div>
@@ -65,7 +65,7 @@ export default function About() {
                                 variants={variants}
                                 transition={{ duration: 0.6, delay: 0.6 }}
                             >
-                                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">"Veteran Squad, Smart Budget"</h3>
+                                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">&quot;Veteran Squad, Smart Budget&quot;</h3>
                                 <p className="text-[#CCCCCC] leading-relaxed text-lg">
                                     최고의 결과물은 최고의 팀에서 나옵니다.
                                     업계 베테랑들로 구성된 최적의 팀 세팅으로, 불필요한 비용은 줄이고 영상의 가치는 극대화합니다.

@@ -64,7 +64,7 @@ export default function ContactForm() {
                 className="text-center p-12 bg-white/5 rounded-2xl border border-white/10"
             >
                 <h3 className="text-3xl font-display font-bold text-white mb-4">Message Sent</h3>
-                <p className="text-white/60">We'll get back to you shortly.</p>
+                <p className="text-white/60">We&apos;ll get back to you shortly.</p>
                 <button
                     onClick={() => setIsSuccess(false)}
                     className="mt-8 text-primary hover:text-white transition-colors"

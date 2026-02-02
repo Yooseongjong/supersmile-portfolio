@@ -91,7 +91,7 @@ export default function Navbar() {
                                 window.open('https://open.kakao.com/o/gU25oQdi', '_blank');
                             }}
                         >
-                            Let's Talk
+                            Let&apos;s Talk
                         </Button>
                     </nav>
 

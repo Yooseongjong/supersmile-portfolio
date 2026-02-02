@@ -22,7 +22,7 @@ export default function Contact() {
                     <p className="text-primary font-medium tracking-widest uppercase mb-8">Ready to Start?</p>
 
                     <h2 className="font-display text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-12 tracking-tighter leading-none hover:text-white/90 transition-colors cursor-pointer group">
-                        LET'S CREATE <br />
+                        LET&apos;S CREATE <br />
                         <span className="text-white group-hover:text-primary transition-colors duration-500">TOGETHER</span>
                     </h2>
 
