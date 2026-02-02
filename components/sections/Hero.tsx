@@ -122,7 +122,12 @@ export default function Hero() {
                     <Button size="lg" variant="primary">
                         View Our Work
                     </Button>
-                    <Button size="lg" variant="outline" className="bg-black/20 backdrop-blur-sm border-white/20 text-white hover:bg-white hover:text-black">
+                    <Button
+                        size="lg"
+                        variant="outline"
+                        className="bg-black/20 backdrop-blur-sm border-white/20 text-white hover:bg-white hover:text-black"
+                        onClick={() => window.open('https://open.kakao.com/o/gU25oQdi', '_blank')}
+                    >
                         Contact Studio
                     </Button>
                 </motion.div>
