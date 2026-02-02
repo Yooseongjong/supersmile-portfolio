@@ -83,7 +83,7 @@ export default function About() {
                         >
                             <iframe
                                 className="w-full h-full object-cover"
-                                src="https://www.youtube.com/embed/kXGcqs_XV4s?autoplay=1&mute=0&loop=1&playlist=kXGcqs_XV4s&controls=1&rel=0&modestbranding=1"
+                                src="https://www.youtube.com/embed/kXGcqs_XV4s?rel=0&modestbranding=1&controls=1"
                                 title="Showreel"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
