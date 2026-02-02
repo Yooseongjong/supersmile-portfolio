@@ -13,6 +13,7 @@ const PROJECTS = [
     { id: 1, title: "Samsung Galaxy S24", category: "Branded", client: "Samsung" },
     { id: 2, title: "Neon City", category: "Entertainment", client: "YouTube Original" },
     { id: 3, title: "Summer Vibes Festival", category: "Live", client: "Red Bull" },
+    { id: 17, title: "2017, 2018 World DJ Festival", category: "Event", client: "SBSMTV", youtubeId: "PYAMWgzKMuk", image: "/images/project-wdjf.png", link: "https://youtu.be/PYAMWgzKMuk" },
     { id: 4, title: "World ID KOREA 오픈 행사", category: "Event", client: "World ID", youtubeId: "uLk3-_WCa2Y", image: "/images/project-world-id.png", link: "https://www.youtube.com/watch?v=uLk3-_WCa2Y" },
     { id: 16, title: "현대카드TECH TALK", category: "Event", client: "현대카드x원티드", youtubeId: "tk_8n500hi0", image: "/images/project-hyundaicard-techtalk.png", link: "https://youtu.be/tk_8n500hi0" },
     { id: 5, title: "Nike Air Max", category: "Branded", client: "Nike" },
