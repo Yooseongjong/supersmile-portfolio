@@ -10,7 +10,7 @@ import Button from '@/components/ui/Button';
 import { useAudio } from '@/components/ui/AudioProvider';
 
 const navLinks = [
-    { href: '#work', label: 'Work' },
+    { href: '/work', label: 'Work' },
     { href: '#about', label: 'About' },
     { href: '#services', label: 'Services' },
     { href: '#contact', label: 'Contact' },
