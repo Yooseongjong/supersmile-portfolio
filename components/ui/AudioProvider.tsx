@@ -22,11 +22,8 @@ export function useAudio() {
 export default function AudioProvider({ children }: { children: React.ReactNode }) {
     const [isMuted, setIsMuted] = useState(false);
     const audioContextRef = useRef<AudioContext | null>(null);
-    const bgmRef = useRef<HTMLAudioElement | null>(null);
-    const [hasInteracted, setHasInteracted] = useState(false);
-
     useEffect(() => {
-        // Initialize AudioContext and BGM on user interaction
+        // Initialize AudioContext on user interaction
         const initAudio = () => {
             if (typeof window !== 'undefined') {
                 // Audio Context
@@ -36,14 +33,6 @@ export default function AudioProvider({ children }: { children: React.ReactNode 
                         audioContextRef.current = new AudioContext();
                     }
                 }
-
-                // BGM Initialization
-                if (!bgmRef.current) {
-                    bgmRef.current = new Audio('/sounds/bgm.mp3');
-                    bgmRef.current.loop = true;
-                    bgmRef.current.volume = 0.5; // Default volume
-                }
-
                 setHasInteracted(true);
             }
         };
@@ -51,18 +40,6 @@ export default function AudioProvider({ children }: { children: React.ReactNode 
         window.addEventListener('click', initAudio, { once: true });
         return () => window.removeEventListener('click', initAudio);
     }, []);
-
-    // Handle BGM Playback based on Mute state and Interaction
-    useEffect(() => {
-        if (!bgmRef.current || !hasInteracted) return;
-
-        if (isMuted) {
-            bgmRef.current.pause();
-        } else {
-            // Attempt to play, handling potential auto-play errors
-            bgmRef.current.play().catch(e => console.log("BGM Playback failed (likely due to interaction policy):", e));
-        }
-    }, [isMuted, hasInteracted]);
 
     const playTone = (freq: number, type: 'sine' | 'square' | 'triangle', duration: number, volume: number = 0.05) => {
         if (isMuted || !audioContextRef.current) return;
