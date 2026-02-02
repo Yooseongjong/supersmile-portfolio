@@ -13,7 +13,7 @@ const PROJECTS = [
     { id: 1, title: "Samsung Galaxy S24", category: "Branded", client: "Samsung" },
     { id: 2, title: "Neon City", category: "Entertainment", client: "YouTube Original" },
     { id: 3, title: "Summer Vibes Festival", category: "Live", client: "Red Bull" },
-    { id: 4, title: "Tech Conference 2024", category: "Event", client: "Google" },
+    { id: 4, title: "World ID KOREA 오픈 행사", category: "Event", client: "Google", youtubeId: "uLk3-_WCa2Y" },
     { id: 5, title: "Nike Air Max", category: "Branded", client: "Nike" },
     { id: 6, title: "Late Night Show", category: "Entertainment", client: "TVN" },
     { id: 7, title: "Live Concert 2023", category: "Live", client: "Melon" },
