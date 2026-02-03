@@ -18,6 +18,16 @@ export interface Service {
 
 export const projects: Project[] = [
     {
+        id: 17,
+        title: "메이플스토리 웡스토랑 시리즈",
+        category: "Branded",
+        image: "/assets/maplestory_wong_restaurant.png",
+        description: "넥슨 메이플스토리의 '웡스토랑' 캠페인 시리즈 영상입니다. 스타 셰프들의 화려한 요리와 함께하는 특별한 미식 이벤트를 담았습니다.",
+        year: "2023",
+        client: "넥슨",
+        youtubeLink: "https://youtu.be/gWGQt9ZGda4"
+    },
+    {
         id: 16,
         title: "나미춘의 동계스포츠 도전기! 시리즈",
         category: "Branded",
