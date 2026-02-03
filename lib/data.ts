@@ -18,6 +18,16 @@ export interface Service {
 
 export const projects: Project[] = [
     {
+        id: 18,
+        title: "이장군xOptimum Nutrition",
+        category: "Branded",
+        image: "/assets/lee_jang_kun_optimum.png",
+        description: "글렌비아(Optimum Nutrition)와 이장군 선수가 함께한 브랜드 캠페인 영상입니다. 강렬한 퍼포먼스와 브랜드 아이덴티티를 역동적으로 담았습니다.",
+        year: "2023",
+        client: "글렌비아",
+        youtubeLink: "https://youtu.be/NDuah2bAShc"
+    },
+    {
         id: 17,
         title: "메이플스토리 웡스토랑 시리즈",
         category: "Branded",
