@@ -18,6 +18,16 @@ export interface Service {
 
 export const projects: Project[] = [
     {
+        id: 10,
+        title: "TWS 'Sparkling Blue'일본 프로모션 비하인드 편집",
+        category: "Event",
+        image: "/assets/tws_sparkling_blue.png",
+        description: "TWS의 'Sparkling Blue' 일본 프로모션 현장의 설렘과 열정을 담은 비하인드 영상입니다.",
+        year: "2024",
+        client: "하이브",
+        youtubeLink: "https://youtu.be/4gDAN94wOZQ"
+    },
+    {
         id: 9,
         title: "엔하이픈_2024WeverseCon 비하인드 편집",
         category: "Event",
