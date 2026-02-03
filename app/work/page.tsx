@@ -10,6 +10,7 @@ const CATEGORIES = ["ALL", "Entertainment", "Branded", "Live", "Event"];
 
 // Dummy Data
 const PROJECTS = [
+    { id: 31, title: "나미춘의 동계스포츠 도전기! 시리즈", category: "Branded", client: "한국관광공사", youtubeId: "GPiJaSyHjbE", image: "/assets/winter_sports_challenge.png", link: "https://youtu.be/GPiJaSyHjbE" },
     { id: 30, title: "슬로프의 모든 것 시리즈", category: "Event", client: "한국관광공사", youtubeId: "r50ctGvayqk", image: "/assets/slope_series.png", link: "https://youtu.be/r50ctGvayqk" },
     { id: 29, title: "괜찮아, 다시시작이야 시리즈", category: "Branded", client: "행정안전부", youtubeId: "p88Rz2cpXE0", image: "/assets/its_okay_restart.png", link: "https://youtu.be/p88Rz2cpXE0" },
     { id: 28, title: "2022 Let's DMZ 특별한만남", category: "Branded", client: "Let's DMZ", youtubeId: "3ZYt2pCMpoA", image: "/assets/lets_dmz.png", link: "https://youtu.be/3ZYt2pCMpoA" },

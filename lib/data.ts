@@ -18,6 +18,16 @@ export interface Service {
 
 export const projects: Project[] = [
     {
+        id: 16,
+        title: "나미춘의 동계스포츠 도전기! 시리즈",
+        category: "Branded",
+        image: "/assets/winter_sports_challenge.png",
+        description: "윤태진 아나운서(나미춘)가 직접 에버랜드 스노우버스터를 체험하며 동계스포츠의 즐거움을 전하는 예능형 브랜디드 콘텐츠입니다.",
+        year: "2022",
+        client: "한국관광공사",
+        youtubeLink: "https://youtu.be/GPiJaSyHjbE"
+    },
+    {
         id: 15,
         title: "슬로프의 모든 것 시리즈",
         category: "Event",
