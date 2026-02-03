@@ -18,6 +18,16 @@ export interface Service {
 
 export const projects: Project[] = [
     {
+        id: 13,
+        title: "2022 Let's DMZ 특별한만남",
+        category: "Branded",
+        image: "/assets/lets_dmz.png",
+        description: "2022 Let's DMZ 평화예술제의 일환으로 진행된 특별 대담 영상입니다. 평화와 화합의 메시지를 전합니다.",
+        year: "2022",
+        client: "Let's DMZ",
+        youtubeLink: "https://youtu.be/3ZYt2pCMpoA"
+    },
+    {
         id: 12,
         title: "365mc 챌린지방의 쉽지 않았던 도전",
         category: "Branded",
