@@ -18,6 +18,16 @@ export interface Service {
 
 export const projects: Project[] = [
     {
+        id: 8,
+        title: "세븐틴 \"음악의신\" MV비하인드 편집",
+        category: "Event",
+        image: "/assets/seventeen_god_of_music.png",
+        description: "세븐틴의 '음악의 신' 뮤직비디오 촬영 현장의 생생함과 멤버들의 유쾌한 모습을 담은 비하인드 영상입니다.",
+        year: "2023",
+        client: "하이브",
+        youtubeLink: "https://youtu.be/PpDTqpD2AUk"
+    },
+    {
         id: 7,
         title: "Agust D in Asia - 편집",
         category: "Event",
