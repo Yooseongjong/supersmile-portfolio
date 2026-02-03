@@ -18,6 +18,126 @@ export interface Service {
 
 export const projects: Project[] = [
     {
+        id: 30,
+        title: "심심할 땐 과학 시즌2,3,4,5_후반작업",
+        category: "Branded",
+        image: "/assets/science_when_bored.png",
+        description: "국립과천과학관의 과학 예능 시리즈 '심심할 땐 과학'의 시즌 2, 3, 4, 5 후반작업을 담당했습니다. 유익한 과학 지식을 재미있고 이해하기 쉽게 편집했습니다.",
+        year: "2024",
+        client: "국립과천과학관",
+        youtubeLink: "https://youtu.be/DB7bCtOUerE"
+    },
+    {
+        id: 29,
+        title: "디어마이엑스_후반작업",
+        category: "Branded",
+        image: "/assets/dear_my_x.png",
+        description: "ENA의 예능 '디어마이엑스' 후반작업에 참여했습니다. 감정선을 섬세하게 살리는 편집과 색보정으로 프로그램의 완성도를 높였습니다.",
+        year: "2024",
+        client: "ENA",
+        youtubeLink: "https://youtu.be/Le3T_pgn734"
+    },
+    {
+        id: 28,
+        title: "숲 깊은 이야기_편집",
+        category: "Branded",
+        image: "/assets/forest_story.png",
+        description: "하이원리조트의 '숲 깊은 이야기' 편집을 담당했습니다. 자연 속에서의 치유와 휴식을 감성적인 편집으로 담아냈습니다.",
+        year: "2024",
+        client: "하이원리조트",
+        youtubeLink: "https://youtu.be/HqJGRgxTz3w"
+    },
+    {
+        id: 27,
+        title: "톡톡한 정리",
+        category: "Branded",
+        image: "/assets/toktok_organizing.png",
+        description: "DIA tv의 정리 컨설팅 프로그램 '톡톡한 정리'입니다. 효율적인 공간 활용과 정리 노하우를 재미있게 전달했습니다.",
+        year: "2024",
+        client: "DIA tv",
+        youtubeLink: "https://youtu.be/MJDOKGffNHo"
+    },
+    {
+        id: 26,
+        title: "여행 소개팅 썸팅",
+        category: "Branded",
+        image: "/assets/something_dating.png",
+        description: "DIA tv의 여행 연애 리얼리티 '썸팅'입니다. 대만 여행지에서의 남녀 간의 설렘과 낭만을 리얼하게 담아냈습니다.",
+        year: "2024",
+        client: "DIA tv",
+        youtubeLink: "https://youtu.be/4xmlF-mBb5M"
+    },
+    {
+        id: 25,
+        title: "테크룸",
+        category: "Branded",
+        image: "/assets/tech_room.png",
+        description: "이마트의 웹예능 '테크룸'입니다. 전자기기 제한 구역에서의 생존기를 담은 독특한 컨셉의 브랜디드 콘텐츠입니다.",
+        year: "2024",
+        client: "이마트",
+        youtubeLink: "https://youtu.be/0_CP7th0ZUM"
+    },
+    {
+        id: 24,
+        title: "L1STEN.JAMIE 메타버스 콘서트",
+        category: "Branded",
+        image: "/assets/listen_jamie_metaverse.png",
+        description: "Gene music과 Play together가 함께한 메타버스 콘서트입니다. 가상 공간에서의 몰입감 넘치는 공연 경험을 선사했습니다.",
+        year: "2024",
+        client: "Gene music x Play together",
+        youtubeLink: "https://youtu.be/NylH_k2Q-8w"
+    },
+    {
+        id: 23,
+        title: "싱어미닛 편집",
+        category: "Branded",
+        image: "/assets/sing_a_minute.png",
+        description: "틱톡과 한국음악저작권협회가 함께한 '싱어미닛' 프로젝트의 편집을 담당했습니다. 음악과 무대의 감동을 세련된 편집으로 전달했습니다.",
+        year: "2024",
+        client: "틱톡&한국음악저작권협회",
+        youtubeLink: "https://youtu.be/SV8G9mbfpHA"
+    },
+    {
+        id: 22,
+        title: "캐시미 이프 유캔 브랜디드 시리즈",
+        category: "Branded",
+        image: "/assets/cash_me_if_you_can.png",
+        description: "Carrot과 함께한 여행 예능 브랜디드 콘텐츠입니다. 유쾌한 스토리텔링으로 브랜드 메시지를 자연스럽게 녹여냈습니다.",
+        year: "2024",
+        client: "Carrot",
+        youtubeLink: "https://youtu.be/VyjF8BvnsYA"
+    },
+    {
+        id: 21,
+        title: "아무튼 샴페인 브랜디드 시리즈",
+        category: "Branded",
+        image: "/assets/anyway_champagne.png",
+        description: "페리에주에 코리아와 함께한 럭셔리 샴페인 브랜디드 콘텐츠 시리즈입니다. 아름다운 영상미로 브랜드의 우아함을 담아냈습니다.",
+        year: "2024",
+        client: "페리에주에 코리아",
+        youtubeLink: "https://youtu.be/HtM9KkbhnOw"
+    },
+    {
+        id: 20,
+        title: "일타강사 문쌤의 DooubleX2특강",
+        category: "Branded",
+        image: "/assets/lotteria_doublex2.png",
+        description: "롯데리아의 DoubleX2 버거 출시 기념 '일타강사 문쌤' 컨셉의 유머러스한 브랜디드 콘텐츠입니다.",
+        year: "2024",
+        client: "롯데리아",
+        youtubeLink: "https://youtu.be/HfxZFiH2rZ0"
+    },
+    {
+        id: 19,
+        title: "Optimum Nutrition 홍보영상",
+        category: "Branded",
+        image: "/assets/optimum_nutrition.png",
+        description: "글렌비아(Optimum Nutrition)의 브랜드 가치를 전달하는 홍보영상입니다. 역동적인 비주얼로 브랜드 아이덴티티를 표현했습니다.",
+        year: "2024",
+        client: "글렌비아",
+        youtubeLink: "https://youtu.be/NDuah2bAShc"
+    },
+    {
         id: 18,
         title: "이장군xOptimum Nutrition",
         category: "Branded",
