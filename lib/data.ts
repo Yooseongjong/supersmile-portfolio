@@ -18,6 +18,16 @@ export interface Service {
 
 export const projects: Project[] = [
     {
+        id: 11,
+        title: "2020 SKT 채용영상시리즈",
+        category: "Branded",
+        image: "/assets/skt_recruitment.png",
+        description: "SKT의 2020년 채용을 위한 시리즈 영상입니다. 5G 전문가들의 생생한 이야기를 담아 SKT의 기술력과 문화를 소개했습니다.",
+        year: "2020",
+        client: "SKT",
+        youtubeLink: "https://youtu.be/mDVF2Dr-l78"
+    },
+    {
         id: 10,
         title: "TWS 'Sparkling Blue'일본 프로모션 비하인드 편집",
         category: "Event",
