@@ -18,6 +18,16 @@ export interface Service {
 
 export const projects: Project[] = [
     {
+        id: 14,
+        title: "괜찮아, 다시시작이야 시리즈",
+        category: "Branded",
+        image: "/assets/its_okay_restart.png",
+        description: "행정안전부와 함께한 '괜찮아, 다시 시작이야' 캠페인 영상 시리즈입니다. 실패를 딛고 다시 도전하는 이들의 희망찬 이야기를 담았습니다.",
+        year: "2021",
+        client: "행정안전부",
+        youtubeLink: "https://youtu.be/p88Rz2cpXE0"
+    },
+    {
         id: 13,
         title: "2022 Let's DMZ 특별한만남",
         category: "Branded",

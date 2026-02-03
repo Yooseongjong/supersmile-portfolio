@@ -10,6 +10,7 @@ const CATEGORIES = ["ALL", "Entertainment", "Branded", "Live", "Event"];
 
 // Dummy Data
 const PROJECTS = [
+    { id: 29, title: "괜찮아, 다시시작이야 시리즈", category: "Branded", client: "행정안전부", youtubeId: "p88Rz2cpXE0", image: "/assets/its_okay_restart.png", link: "https://youtu.be/p88Rz2cpXE0" },
     { id: 28, title: "2022 Let's DMZ 특별한만남", category: "Branded", client: "Let's DMZ", youtubeId: "3ZYt2pCMpoA", image: "/assets/lets_dmz.png", link: "https://youtu.be/3ZYt2pCMpoA" },
     { id: 27, title: "365mc 챌린지방의 쉽지 않았던 도전", category: "Branded", client: "365mc", youtubeId: "_6S43gEHJwY", image: "/assets/365mc_challenge.png", link: "https://youtu.be/_6S43gEHJwY" },
     { id: 26, title: "2020 SKT 채용영상시리즈", category: "Branded", client: "SKT", youtubeId: "mDVF2Dr-l78", image: "/assets/skt_recruitment.png", link: "https://youtu.be/mDVF2Dr-l78" },
