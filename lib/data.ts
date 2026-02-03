@@ -18,6 +18,16 @@ export interface Service {
 
 export const projects: Project[] = [
     {
+        id: 9,
+        title: "엔하이픈_2024WeverseCon 비하인드 편집",
+        category: "Event",
+        image: "/assets/enhypen_weverse.png",
+        description: "2024 Weverse Con Festival에 참여한 엔하이픈 위버스콘 비하인드 영상입니다.",
+        year: "2024",
+        client: "하이브",
+        youtubeLink: "https://youtu.be/cnfjW4A9gKo"
+    },
+    {
         id: 8,
         title: "세븐틴 \"음악의신\" MV비하인드 편집",
         category: "Event",

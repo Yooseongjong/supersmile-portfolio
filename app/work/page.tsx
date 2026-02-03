@@ -10,6 +10,7 @@ const CATEGORIES = ["ALL", "Entertainment", "Branded", "Live", "Event"];
 
 // Dummy Data
 const PROJECTS = [
+    { id: 24, title: "엔하이픈_2024WeverseCon 비하인드 편집", category: "Event", client: "하이브", youtubeId: "cnfjW4A9gKo", image: "/assets/enhypen_weverse.png", link: "https://youtu.be/cnfjW4A9gKo" },
     { id: 23, title: "세븐틴 \"음악의신\" MV비하인드 편집", category: "Event", client: "하이브", youtubeId: "PpDTqpD2AUk", image: "/assets/seventeen_god_of_music.png", link: "https://youtu.be/PpDTqpD2AUk" },
     { id: 22, title: "Agust D in Asia - 편집", category: "Event", client: "하이브", youtubeId: "na1vAkq3bSA", image: "/assets/agustd.png", link: "https://youtu.be/na1vAkq3bSA" },
     { id: 21, title: "호관원 홍보영상", category: "Branded", client: "호관원", youtubeId: "lYFJEFdf4Rw", image: "/assets/hoguanwon.jpg", link: "https://youtu.be/lYFJEFdf4Rw" },
