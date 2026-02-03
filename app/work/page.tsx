@@ -10,6 +10,7 @@ const CATEGORIES = ["ALL", "Entertainment", "Branded", "Live", "Event"];
 
 // Dummy Data
 const PROJECTS = [
+    { id: 22, title: "Agust D in Asia - 편집", category: "Event", client: "하이브", youtubeId: "na1vAkq3bSA", image: "/assets/agustd.png", link: "https://youtu.be/na1vAkq3bSA" },
     { id: 21, title: "호관원 홍보영상", category: "Branded", client: "호관원", youtubeId: "lYFJEFdf4Rw", image: "/assets/hoguanwon.jpg", link: "https://youtu.be/lYFJEFdf4Rw" },
     { id: 20, title: "\"눈물을 마시는 새\" 아트북 비하인드 씬", category: "Branded", client: "KRAFTON", youtubeId: "SRDr5jMZziU", image: "/images/project-three-birds.png", link: "https://youtu.be/SRDr5jMZziU" },
     { id: 3, title: "2023 One Hoop", category: "Live", client: "MGTV", youtubeId: "k5hDsLhtkL8", image: "/images/project-one-hoop.png", link: "https://youtu.be/k5hDsLhtkL8" },

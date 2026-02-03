@@ -18,6 +18,16 @@ export interface Service {
 
 export const projects: Project[] = [
     {
+        id: 7,
+        title: "Agust D in Asia - 편집",
+        category: "Event",
+        image: "/assets/agustd.png",
+        description: "Agust D 아시아 투어의 폭발적인 에너지와 현장의 열기를 담은 하이라이트 편집 영상입니다.",
+        year: "2024",
+        client: "하이브",
+        youtubeLink: "https://youtu.be/na1vAkq3bSA"
+    },
+    {
         id: 6,
         title: "호관원 홍보영상",
         category: "Branded",
