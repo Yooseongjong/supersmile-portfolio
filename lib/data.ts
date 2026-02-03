@@ -18,6 +18,16 @@ export interface Service {
 
 export const projects: Project[] = [
     {
+        id: 15,
+        title: "슬로프의 모든 것 시리즈",
+        category: "Event",
+        image: "/assets/slope_series.png",
+        description: "한국관광공사와 함께한 겨울 스포츠 캠페인 '슬로프의 모든 것' 시리즈입니다. 스키와 보드의 매력을 생동감 있게 담아냈습니다.",
+        year: "2023",
+        client: "한국관광공사",
+        youtubeLink: "https://youtu.be/r50ctGvayqk"
+    },
+    {
         id: 14,
         title: "괜찮아, 다시시작이야 시리즈",
         category: "Branded",
