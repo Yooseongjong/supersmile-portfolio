@@ -18,6 +18,16 @@ export interface Service {
 
 export const projects: Project[] = [
     {
+        id: 12,
+        title: "365mc 챌린지방의 쉽지 않았던 도전",
+        category: "Branded",
+        image: "/assets/365mc_challenge.jpg",
+        description: "365mc의 대표 캐릭터 '지방이'가 펼치는 유쾌하고 감동적인 도전기를 담은 브랜디드 콘텐츠입니다.",
+        year: "2024",
+        client: "365mc",
+        youtubeLink: "https://youtu.be/_6S43gEHJwY"
+    },
+    {
         id: 11,
         title: "2020 SKT 채용영상시리즈",
         category: "Branded",
