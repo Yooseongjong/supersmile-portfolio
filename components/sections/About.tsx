@@ -76,7 +76,7 @@ export default function About() {
                     </div>
 
                     {/* Visuals - Controlled by Scroll */}
-                    <div className="relative w-full aspect-video hidden md:block">
+                    <div className="relative w-full aspect-video">
                         <motion.div
                             style={{ y: useTransform(scrollYProgress, [0, 1], [100, -100]), opacity: useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]) }}
                             className="absolute inset-0 border border-white/10 rounded-xl overflow-hidden group"
