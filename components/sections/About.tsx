@@ -17,7 +17,7 @@ export default function About() {
 
     return (
         <section id="about" ref={containerRef} className="relative min-h-[150vh] bg-[#050505] text-white">
-            <div className="sticky top-0 h-screen flex items-center overflow-hidden">
+            <div className="relative md:sticky top-0 h-auto md:h-screen flex items-center overflow-visible md:overflow-hidden">
                 <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
                     {/* Text Content - Stays Sticky */}
