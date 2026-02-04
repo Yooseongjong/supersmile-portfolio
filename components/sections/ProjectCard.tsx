@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Play } from 'lucide-react';
 import Image from 'next/image';
 import { useAudio } from '@/components/ui/AudioProvider';
 
@@ -10,52 +9,79 @@ interface ProjectCardProps {
     category: string;
     image: string;
     index: number;
+    client?: string;
+    released?: string;
+    slogan?: string;
 }
 
-export default function ProjectCard({ title, category, image, index }: ProjectCardProps) {
+export default function ProjectCard({ title, category, image, index, client, released, slogan }: ProjectCardProps) {
     const { playHover, playClick } = useAudio();
 
     return (
         <motion.div
-            className="group relative h-[400px] w-[300px] md:h-[600px] md:w-[450px] flex-shrink-0 overflow-hidden rounded-lg bg-neutral-900 cursor-pointer"
-            whileHover={{ scale: 0.98 }}
-            transition={{ duration: 0.4 }}
+            className="group relative w-full aspect-video overflow-hidden rounded-lg bg-neutral-900 cursor-pointer border border-white/5 hover:border-primary transition-all duration-500 ease-out"
             onMouseEnter={() => playHover()}
             onClick={() => playClick()}
         >
-            {/* Image with slight parallax or zoom on hover */}
-            <motion.div
-                className="absolute inset-0 w-full h-full"
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.6 }}
-            >
-                {/* Placeholder for standard Next.js Image - using a simple div for now since we don't have assets yet */}
-                <div className="w-full h-full bg-neutral-800 relative">
-                    <Image
-                        src={image}
-                        alt={title}
-                        fill
-                        className="object-cover"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center text-neutral-700 font-display text-9xl opacity-20 font-bold z-10">
-                        {index + 1}
+            {/* Image with Cinematic Effect: Grayscale & Dimmed -> Color & Bright & Slow Zoom */}
+            <div className="absolute inset-0 w-full h-full overflow-hidden">
+                <motion.div
+                    className="w-full h-full grayscale-[80%] brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-[2000ms] ease-out"
+                >
+                    {/* Standard Next.js Image */}
+                    <div className="w-full h-full bg-neutral-800 relative">
+                        <Image
+                            src={image}
+                            alt={title}
+                            fill
+                            className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500 z-20" />
                     </div>
-                    {/* Gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500 z-20" />
-                </div>
-            </motion.div>
+                </motion.div>
+            </div>
 
             {/* Content */}
-            <div className="absolute inset-0 p-8 flex flex-col justify-between">
-                <div className="self-end opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                    <div className="w-12 h-12 rounded-full bg-primary/90 flex items-center justify-center text-black">
-                        <Play fill="currentColor" size={16} className="ml-0.5" />
+            <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end z-30">
+                <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                    {/* Category Tag */}
+                    <div className="mb-2 md:mb-3">
+                        <span className="text-primary font-bold tracking-widest text-[10px] md:text-xs uppercase bg-black/50 backdrop-blur-md px-2 py-1 rounded-sm border border-primary/20 shadow-[0_0_10px_rgba(34,197,94,0.2)]">
+                            {category}
+                        </span>
                     </div>
-                </div>
 
-                <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                    <h3 className="font-display text-3xl md:text-4xl font-bold text-white mb-2">{title}</h3>
-                    <p className="text-primary font-medium tracking-widest text-sm uppercase">{category}</p>
+                    {/* Slogan - Slide Up Effect */}
+                    {slogan && (
+                        <div className="overflow-hidden mb-1 md:mb-2">
+                            <h4 className="text-white/90 font-medium text-sm md:text-lg italic tracking-wide font-serif transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 delay-100">
+                                "{slogan}"
+                            </h4>
+                        </div>
+                    )}
+
+                    {/* Title */}
+                    <h3 className="font-display text-xl md:text-3xl font-bold text-white mb-2 md:mb-3 leading-tight line-clamp-2 shadow-black drop-shadow-lg">
+                        {title}
+                    </h3>
+
+                    {/* Meta Info */}
+                    {(client || released) && (
+                        <div className="flex items-center gap-4 text-[10px] md:text-xs font-medium text-white/50 border-t border-white/10 pt-3 opacity-60 group-hover:opacity-100 transition-opacity duration-500">
+                            {client && (
+                                <p className="flex items-center">
+                                    <span className="text-white/30 uppercase tracking-wider mr-2">CLIENT</span>
+                                    <span className="text-white/70">{client}</span>
+                                </p>
+                            )}
+                            {released && (
+                                <p className="flex items-center">
+                                    <span className="text-white/30 uppercase tracking-wider mr-2">RELEASED</span>
+                                    <span className="text-white/70">{released}</span>
+                                </p>
+                            )}
+                        </div>
+                    )}
                 </div>
             </div>
         </motion.div>

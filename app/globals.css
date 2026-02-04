@@ -7,23 +7,24 @@
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
   }
-  
-  html.lenis, html.lenis body {
+
+  html.lenis,
+  html.lenis body {
     height: auto;
   }
-  
+
   .lenis.lenis-smooth {
     scroll-behavior: auto !important;
   }
-  
+
   .lenis.lenis-smooth [data-lenis-prevent] {
     overscroll-behavior: contain;
   }
-  
+
   .lenis.lenis-stopped {
     overflow: hidden;
   }
-  
+
   .lenis.lenis-scrolling iframe {
     pointer-events: none;
   }
@@ -31,7 +32,22 @@
 
 body {
   @apply bg-background text-foreground antialiased selection:bg-primary selection:text-black;
-  cursor: none; /* Hide default cursor for custom cursor */
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+    /* Hide default cursor for custom cursor */
+  }
+
+  /* Force hide cursor on interactive elements */
+  a,
+  button,
+  [role="button"],
+  .cursor-pointer {
+    cursor: none !important;
+  }
 }
 
 /* Custom Scrollbar */

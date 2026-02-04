@@ -70,7 +70,7 @@ export default function Hero() {
 
             {/* LAYER 2: Interactive Character - Shifted Right on Desktop */}
             <motion.div
-                className="absolute z-10 w-full h-full flex items-center justify-center md:justify-end md:pr-[5%] pointer-events-none"
+                className="absolute z-10 w-full h-full flex items-center justify-center md:justify-end md:pr-[10%] pointer-events-none"
                 style={{
                     x: charX,
                     y: charY,
@@ -79,7 +79,7 @@ export default function Hero() {
                     opacity
                 }}
             >
-                <div className="relative w-[80vw] md:w-[45vw] aspect-square max-w-[800px] md:translate-x-10">
+                <div className="relative w-[80vw] md:w-[55vw] aspect-square max-w-[1000px] md:translate-x-0">
                     <Image
                         src="/images/hero-smiley-char-new.png"
                         alt="SuperSmile Character"

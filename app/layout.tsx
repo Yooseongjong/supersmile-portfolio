@@ -7,6 +7,8 @@ import SmoothScrollProvider from '@/components/ui/SmoothScrollProvider';
 import Preloader from '@/components/ui/Preloader';
 import Navbar from '@/components/layout/Navbar';
 import AudioProvider from '@/components/ui/AudioProvider';
+import CinematicBackground from '@/components/ui/CinematicBackground';
+// import Intro from '@/components/ui/Intro';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' });
@@ -67,7 +69,9 @@ export default function RootLayout({
             <body className="font-sans bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-black">
                 <SmoothScrollProvider>
                     <AudioProvider>
-                        {/* <Preloader /> */}
+                        <CinematicBackground />
+                        <Preloader />
+                        {/* <Intro /> */}
                         <CustomCursor />
                         <Navbar />
                         {children}
