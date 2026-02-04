@@ -55,7 +55,7 @@ export default function ProjectCard({ title, category, image, index, client, rel
                     {slogan && (
                         <div className="overflow-hidden mb-1 md:mb-2">
                             <h4 className="text-white/90 font-medium text-sm md:text-lg italic tracking-wide font-serif transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 delay-100">
-                                "{slogan}"
+                                &quot;{slogan}&quot;
                             </h4>
                         </div>
                     )}

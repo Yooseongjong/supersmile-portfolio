@@ -27,8 +27,6 @@ export default function CustomCursor() {
         return () => window.removeEventListener('resize', checkTouch);
     }, []);
 
-    if (isTouchDevice) return null;
-
     useEffect(() => {
         const moveCursor = (e: MouseEvent) => {
             cursorX.set(e.clientX);
@@ -50,10 +48,12 @@ export default function CustomCursor() {
             }
         };
 
-        window.addEventListener('mousemove', moveCursor);
-        window.addEventListener('mousedown', handleMouseDown);
-        window.addEventListener('mouseup', handleMouseUp);
-        window.addEventListener('mouseover', handleMouseOver);
+        if (!isTouchDevice) {
+            window.addEventListener('mousemove', moveCursor);
+            window.addEventListener('mousedown', handleMouseDown);
+            window.addEventListener('mouseup', handleMouseUp);
+            window.addEventListener('mouseover', handleMouseOver);
+        }
 
         return () => {
             window.removeEventListener('mousemove', moveCursor);
@@ -61,7 +61,9 @@ export default function CustomCursor() {
             window.removeEventListener('mouseup', handleMouseUp);
             window.removeEventListener('mouseover', handleMouseOver);
         };
-    }, [cursorX, cursorY]);
+    }, [cursorX, cursorY, isTouchDevice]);
+
+    if (isTouchDevice) return null;
 
     return (
         <motion.div
