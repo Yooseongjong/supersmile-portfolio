@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
@@ -70,7 +70,7 @@ const PROJECTS = [
     { id: 305, title: "SK교육특강 시리즈", category: "CORPORATE", client: "SK", youtubeId: "JUIAJT_hPk4", image: "/assets/sk_education_lecture.png", link: "https://youtu.be/JUIAJT_hPk4" },
 ];
 
-export default function WorkPage() {
+function WorkContent() {
     const searchParams = useSearchParams();
     const [selectedCategory, setSelectedCategory] = useState("ALL");
     const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
@@ -232,5 +232,13 @@ export default function WorkPage() {
 
             <Footer />
         </main>
+    );
+}
+
+export default function WorkPage() {
+    return (
+        <Suspense fallback={<div className="min-h-screen bg-[#050505] text-white flex items-center justify-center">Loading...</div>}>
+            <WorkContent />
+        </Suspense>
     );
 }
