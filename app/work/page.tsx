@@ -13,7 +13,7 @@ const CATEGORIES = ["ALL", "WEB SERIES", "COMMERCIAL", "PERFORMANCE", "LIVE", "C
 // Dummy Data
 const PROJECTS = [
     // WEB SERIES
-    { id: 29, title: "디어마이엑스_Post", category: "WEB SERIES", client: "ENA", youtubeId: "Le3T_pgn734", image: "/assets/dear_my_x_new.png", link: "https://youtu.be/Le3T_pgn734" },
+    { id: 29, title: "디어마이엑스_Post", category: "WEB SERIES", client: "ENA", youtubeId: "mQMc-aAt0eA", image: "/assets/dear_my_x_v2.png", link: "https://youtu.be/mQMc-aAt0eA" },
     { id: 22, title: "캐시미 이프 유캔 브랜디드 시리즈", category: "WEB SERIES", client: "Carrot", youtubeId: "VyjF8BvnsYA", image: "/assets/cash_me_if_you_can.png", link: "https://youtu.be/VyjF8BvnsYA" },
     { id: 25, title: "테크룸", category: "WEB SERIES", client: "이마트", youtubeId: "0_CP7th0ZUM", image: "/assets/tech_room.png", link: "https://youtu.be/0_CP7th0ZUM" },
     { id: 16, title: "동계스포츠의 모든 것!", category: "WEB SERIES", client: "한국관광공사", youtubeId: "GPiJaSyHjbE", image: "/assets/winter_sports_new.png", link: "https://youtu.be/GPiJaSyHjbE" },

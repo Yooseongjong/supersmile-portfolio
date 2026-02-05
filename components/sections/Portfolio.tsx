@@ -14,8 +14,8 @@ const SELECTED_WORKS = [
         category: "WEB SERIES",
         client: "ENA",
         year: "DEC 2025",
-        youtubeLink: "https://youtu.be/Le3T_pgn734",
-        image: "/assets/dear_my_x.png",
+        youtubeLink: "https://youtu.be/mQMc-aAt0eA",
+        image: "/assets/dear_my_x_v2.png",
         description: "ENA의 예능 '디어마이엑스' 후반작업에 참여했습니다. 감정선을 섬세하게 살리는 편집과 색보정으로 프로그램의 완성도를 높였습니다.",
         slogan: "Trend-leading Content"
     },
