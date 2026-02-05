@@ -48,7 +48,7 @@ export default function Preloader() {
                             initial={{ opacity: 1 }}
                             exit={{ opacity: 0, filter: 'blur(10px)', scale: 1.1 }}
                             transition={{ duration: 0.2 }}
-                            className="flex items-center gap-2"
+                            className="flex items-center justify-center gap-2"
                         >
                             <span className="font-display text-4xl md:text-6xl font-bold text-white tracking-tighter">
                                 SUPER
