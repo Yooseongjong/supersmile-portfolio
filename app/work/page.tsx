@@ -47,7 +47,7 @@ const PROJECTS = [
     { id: 9, title: "엔하이픈_2024WeverseCon 비하인드_Post", category: "PERFORMANCE", client: "하이브", youtubeId: "cnfjW4A9gKo", image: "/assets/enhypen_new.png", link: "https://youtu.be/cnfjW4A9gKo" },
 
     // LIVE
-    { id: 106, title: "마비노기 2025 겨울 쇼케이스 OAP", category: "LIVE", client: "넥슨", youtubeId: "7wJR_P7uYHM", image: "/images/project-mabinogi-2025.png", link: "https://youtu.be/7wJR_P7uYHM" },
+    { id: 106, title: "마비노기 2025 겨울 쇼케이스_OAP", category: "LIVE", client: "넥슨", youtubeId: "7wJR_P7uYHM", image: "/images/project-mabinogi-2025.png", link: "https://youtu.be/7wJR_P7uYHM" },
     { id: 110, title: "마비노기 2023 겨울 라이브 쇼케이스", category: "LIVE", client: "넥슨", youtubeId: "1jx6YYNfv-8", image: "/images/project-mabinogi.png", link: "https://youtu.be/1jx6YYNfv-8" },
     { id: 111, title: "메이플스토리 팡글대전", category: "LIVE", client: "넥슨", youtubeId: "tr0OKOiv8eA", image: "/images/project-maplestory-panggle.png", link: "https://youtu.be/tr0OKOiv8eA" },
     { id: 105, title: "AFK 슬기로운 아레나생활", category: "LIVE", client: "AFK아레나", youtubeId: "MiPtakEMKqw", image: "/images/project-afk-arena.png", link: "https://youtu.be/MiPtakEMKqw" },

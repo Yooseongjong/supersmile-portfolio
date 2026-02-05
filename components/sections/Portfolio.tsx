@@ -43,7 +43,7 @@ const SELECTED_WORKS = [
     },
     {
         id: 106,
-        title: "2025 Mabinogi Showcase_POST",
+        title: "2025 Mabinogi Showcase_OAP",
         category: "LIVE",
         client: "NEXON",
         year: "NOV 2025",
