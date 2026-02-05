@@ -10,7 +10,7 @@ import ProjectDetailModal from './ProjectDetailModal';
 const SELECTED_WORKS = [
     {
         id: 29,
-        title: "Dear My X (디어마이엑스)",
+        title: "Dear My X (디어마이엑스)_POST",
         category: "WEB SERIES",
         client: "ENA",
         year: "DEC 2025",
@@ -43,7 +43,7 @@ const SELECTED_WORKS = [
     },
     {
         id: 106,
-        title: "2025 Mabinogi Showcase",
+        title: "2025 Mabinogi Showcase_POST",
         category: "LIVE",
         client: "NEXON",
         year: "NOV 2025",
