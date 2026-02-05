@@ -129,7 +129,7 @@ export const projects: Project[] = [
     },
     {
         id: 19,
-        title: "Optimum Nutrition 홍보영상",
+        title: "Optimum Nutrition Brand Film",
         category: "Branded",
         image: "/assets/optimum_nutrition.png",
         description: "글렌비아(Optimum Nutrition)의 브랜드 가치를 전달하는 홍보영상입니다. 역동적인 비주얼로 브랜드 아이덴티티를 표현했습니다.",
