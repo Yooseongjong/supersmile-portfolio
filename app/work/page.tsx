@@ -26,6 +26,7 @@ const PROJECTS = [
     { id: 19, title: "Optimum Nutrition 홍보영상", category: "COMMERCIAL", client: "글렌비아", youtubeId: "NDuah2bAShc", image: "/assets/optimum_nutrition.png", link: "https://youtu.be/NDuah2bAShc" },
     { id: 21, title: "아무튼 샴페인 브랜디드 시리즈", category: "COMMERCIAL", client: "페리에주에 코리아", youtubeId: "HtM9KkbhnOw", image: "/assets/anyway_champagne.png", link: "https://youtu.be/HtM9KkbhnOw" },
     { id: 20, title: "일타강사 문쌤의 DooubleX2특강", category: "COMMERCIAL", client: "롯데리아", youtubeId: "HfxZFiH2rZ0", image: "/assets/lotteria_doublex2.png", link: "https://youtu.be/HfxZFiH2rZ0" },
+    { id: 311, title: "교보헬스케어 홍보영상", category: "COMMERCIAL", client: "교보생명", youtubeId: "7XkXPAcp-yA", image: "/assets/kyobo_healthcare.png", link: "https://youtu.be/7XkXPAcp-yA" },
     { id: 310, title: "인천중앙여고 홍보영상", category: "COMMERCIAL", client: "인천중앙여고", youtubeId: "EP8-znuEPbs", image: "/assets/incheon_girls_high.png", link: "https://youtu.be/EP8-znuEPbs" },
     { id: 200, title: "\"눈물을 마시는 새\" 아트북 비하인드 씬", category: "COMMERCIAL", client: "KRAFTON", youtubeId: "SRDr5jMZziU", image: "/images/project-three-birds.png", link: "https://youtu.be/SRDr5jMZziU" },
     { id: 308, title: "경기씨네 영화관'독백'", category: "COMMERCIAL", client: "경기콘텐츠진흥원", youtubeId: "tytV-UEA5dE", image: "/assets/gyeonggi_cine_monologue.png", link: "https://youtu.be/tytV-UEA5dE" },
