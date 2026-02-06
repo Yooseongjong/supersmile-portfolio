@@ -308,7 +308,17 @@ export const projects: Project[] = [
         image: "/assets/p2.png",
         description: "A visionary campaign for sustainable energy. Using organic lighting and practical effects to visualize a harmonious future between tech and nature.",
         year: "2024"
-    }
+    },
+    {
+        id: 31,
+        title: "교보헬스케어 홍보영상",
+        category: "CORPORATE",
+        image: "/assets/kyobo_healthcare.png",
+        description: "교보생명 교보헬스케어 홍보영상입니다.",
+        year: "2024",
+        client: "교보생명",
+        youtubeLink: "https://youtu.be/7XkXPAcp-yA"
+    },
 ];
 
 export const services: Service[] = [
