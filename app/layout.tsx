@@ -14,34 +14,34 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' });
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://supersmile.creative'),
+    metadataBase: new URL('https://www.supersmile.kr'),
     title: {
-        default: 'SuperSmile Creative | Cinematic Video Production',
-        template: '%s | SuperSmile Creative',
+        default: 'Supersmile Creative | Cinematic Video Production',
+        template: '%s | Supersmile Creative',
     },
-    description: 'SuperSmile Creative is a Deep Dark & Cinematic visual production agency based in Seoul. We blend technology with storytelling.',
-    keywords: ['Production', 'Video', 'Cinematic', 'Creative Agency', 'Seoul', 'Motion Graphics'],
-    authors: [{ name: 'SuperSmile Creative' }],
-    creator: 'SuperSmile Creative',
+    description: 'Supersmile Creative is a premier video production agency in Seoul, specializing in cinematic commercials, brand films, and motion graphics that defy gravity.',
+    keywords: ['Production', 'Video', 'Cinematic', 'Creative Agency', 'Seoul', 'Motion Graphics', 'Commercials', 'Brand Films'],
+    authors: [{ name: 'Supersmile Creative' }],
+    creator: 'Supersmile Creative',
     openGraph: {
         type: 'website',
-        locale: 'en_US',
-        url: 'https://supersmile.creative',
-        title: 'SuperSmile Creative | Cinematic Video Production',
+        locale: 'ko_KR',
+        url: 'https://www.supersmile.kr',
+        title: 'Supersmile Creative | Cinematic Video Production',
         description: 'We craft cinematic experiences that defy gravity. A new breed of production studio.',
-        siteName: 'SuperSmile Creative',
+        siteName: 'Supersmile Creative',
         images: [
             {
                 url: '/assets/og-image.jpg',
                 width: 1200,
                 height: 630,
-                alt: 'SuperSmile Creative Portfolio',
+                alt: 'Supersmile Creative Portfolio',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'SuperSmile Creative',
+        title: 'Supersmile Creative',
         description: 'Deep Dark & Cinematic visual production.',
         images: ['/assets/og-image.jpg'],
         creator: '@supersmile',
@@ -50,6 +50,12 @@ export const metadata: Metadata = {
         icon: '/favicon.ico',
         shortcut: '/favicon-16x16.png',
         apple: '/apple-touch-icon.png',
+    },
+    verification: {
+        google: 'VIgUYWAtXu7IG_9cGs5fpOu6TV0VW2qpY2wGD4jNOLY',
+        other: {
+            'naver-site-verification': 'navera87ad00be3864ccf977e04dc8da7d20c',
+        },
     },
 };
 
