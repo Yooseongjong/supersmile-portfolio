@@ -54,6 +54,7 @@ const PROJECTS = [
     { id: 105, title: "AFK 슬기로운 아레나생활", category: "LIVE", client: "AFK아레나", youtubeId: "MiPtakEMKqw", image: "/images/project-afk-arena.png", link: "https://youtu.be/MiPtakEMKqw" },
 
     // CORPORATE
+    { id: 312, title: "2025DDP Seoul light", category: "CORPORATE", client: "Freedots", youtubeId: "fsanteE8fzA", image: "/assets/seoul_light.png", link: "https://youtu.be/fsanteE8fzA" },
     { id: 302, title: "한화생명 미래금융인재 공모전", category: "CORPORATE", client: "한화생명", youtubeId: "7ZMJ_EIrHQY", image: "/assets/hanwha_finance_new.png", link: "https://youtu.be/7ZMJ_EIrHQY" },
     { id: 107, title: "Stylus 화보촬영", category: "CORPORATE", client: "Stylus", youtubeId: "Vk_L494o66A", image: "/images/project-stylus.png", link: "https://youtu.be/Vk_L494o66A" },
     { id: 103, title: "World ID KOREA 오픈 행사", category: "CORPORATE", client: "World ID", youtubeId: "uLk3-_WCa2Y", image: "/images/project-world-id.png", link: "https://www.youtube.com/watch?v=uLk3-_WCa2Y" },

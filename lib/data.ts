@@ -18,6 +18,16 @@ export interface Service {
 
 export const projects: Project[] = [
     {
+        id: 312,
+        title: "2025DDP Seoul light",
+        category: "Corporate",
+        image: "/assets/seoul_light.png",
+        description: "2025DDP Seoul light",
+        year: "2025",
+        client: "Freedots",
+        youtubeLink: "https://youtu.be/fsanteE8fzA"
+    },
+    {
         id: 30,
         title: "심심할 땐 과학 시즌2,3,4,5_후반작업",
         category: "Branded",
