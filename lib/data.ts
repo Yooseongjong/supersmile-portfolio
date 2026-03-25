@@ -18,6 +18,16 @@ export interface Service {
 
 export const projects: Project[] = [
     {
+        id: 313,
+        title: "2026 Stylus",
+        category: "Corporate",
+        image: "/assets/stylus.jpg",
+        description: "2026 Stylus",
+        year: "2026",
+        client: "Stylus",
+        youtubeLink: "https://youtu.be/BoAQlG00eow"
+    },
+    {
         id: 312,
         title: "2025DDP Seoul light",
         category: "Corporate",
