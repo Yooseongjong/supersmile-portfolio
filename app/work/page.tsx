@@ -73,7 +73,16 @@ const HARDCODED_PROJECTS = [
 ];
 
 // Merge projects, putting dataProjects first to show newest at the front
-const ALL_PROJECTS = [...dataProjects];
+// Importantly, preserve the category from HARDCODED_PROJECTS so they don't disappear from the UI tabs!
+const ALL_PROJECTS = dataProjects.map(dp => {
+    const match = HARDCODED_PROJECTS.find(hp => hp.title.includes(dp.title) || dp.title.includes(hp.title.replace('_Post', '')));
+    return {
+        ...dp,
+        category: match ? match.category : dp.category
+    };
+});
+
+// Append any hardcoded projects that aren't in dataProjects
 HARDCODED_PROJECTS.forEach(hp => {
     const isDuplicate = ALL_PROJECTS.some(dp => dp.title.includes(hp.title.replace('_Post', '')) || hp.title.includes(dp.title));
     if (!isDuplicate) {
@@ -86,7 +95,7 @@ HARDCODED_PROJECTS.forEach(hp => {
             image: hp.image,
             description: "",
             year: "2024"
-        });
+        } as any);
     }
 });
 
