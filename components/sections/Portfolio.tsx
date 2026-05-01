@@ -20,14 +20,14 @@ const SELECTED_WORKS = [
         slogan: "Trend-leading Content"
     },
     {
-        id: 21,
-        title: "Anyway Champagne (아무튼샴페인)",
+        id: 31,
+        title: "미스트롯4 x 진탁막걸리 TVCF",
         category: "COMMERCIAL",
-        client: "Perrier-Jouët",
-        year: "AUG 2021",
-        youtubeLink: "https://youtu.be/HtM9KkbhnOw",
-        image: "/assets/anyway_champagne.png",
-        description: "페리에주에 코리아와 함께한 럭셔리 샴페인 브랜디드 콘텐츠 시리즈입니다. 아름다운 영상미로 브랜드의 우아함을 담아냈습니다.",
+        client: "TV조선, 대학내일",
+        year: "2024",
+        youtubeLink: "https://youtu.be/v8zzD7QmClU",
+        image: "/assets/mistrot_jintak_main.jpg",
+        description: "미스트롯4와 진탁막걸리가 함께한 TVCF 영상입니다.",
         slogan: "Creative Brand Storytelling"
     },
     {
