@@ -18,6 +18,16 @@ export interface Service {
 
 export const projects: Project[] = [
     {
+        id: 31,
+        title: "미스트롯4 x 진탁막걸리 TVCF",
+        category: "COMMERCIAL",
+        image: "/assets/mistrot_jintak.jpg",
+        description: "미스트롯4와 진탁막걸리가 함께한 TVCF 영상입니다.",
+        year: "2024",
+        client: "TV조선, 대학내일",
+        youtubeLink: "https://youtu.be/v8zzD7QmClU"
+    },
+    {
         id: 313,
         title: "2026 Stylus",
         category: "Corporate",

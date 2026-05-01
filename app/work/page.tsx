@@ -7,11 +7,10 @@ import { useSearchParams } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import Footer from '@/components/layout/Footer';
 
-// Dummy Categories
-const CATEGORIES = ["ALL", "WEB SERIES", "COMMERCIAL", "PERFORMANCE", "LIVE", "CORPORATE"];
+import { projects as dataProjects } from '@/lib/data';
 
 // Dummy Data
-const PROJECTS = [
+const HARDCODED_PROJECTS = [
     // WEB SERIES
     { id: 29, title: "디어마이엑스_Post", category: "WEB SERIES", client: "ENA", youtubeId: "mQMc-aAt0eA", image: "/assets/project-dear-my-x-final.png", link: "https://youtu.be/mQMc-aAt0eA" },
     { id: 22, title: "캐시미 이프 유캔 브랜디드 시리즈", category: "WEB SERIES", client: "Carrot", youtubeId: "VyjF8BvnsYA", image: "/assets/cash_me_if_you_can.png", link: "https://youtu.be/VyjF8BvnsYA" },
@@ -73,6 +72,26 @@ const PROJECTS = [
     { id: 305, title: "SK교육특강 시리즈", category: "CORPORATE", client: "SK", youtubeId: "JUIAJT_hPk4", image: "/assets/sk_education_lecture.png", link: "https://youtu.be/JUIAJT_hPk4" },
 ];
 
+// Merge projects, putting dataProjects first to show newest at the front
+const ALL_PROJECTS = [...dataProjects];
+HARDCODED_PROJECTS.forEach(hp => {
+    const isDuplicate = ALL_PROJECTS.some(dp => dp.title.includes(hp.title.replace('_Post', '')) || hp.title.includes(dp.title));
+    if (!isDuplicate) {
+        ALL_PROJECTS.push({
+            id: hp.id,
+            title: hp.title,
+            category: hp.category,
+            client: hp.client,
+            youtubeLink: hp.link,
+            image: hp.image,
+            description: "",
+            year: "2024"
+        });
+    }
+});
+
+const CATEGORIES = ["ALL", ...Array.from(new Set(ALL_PROJECTS.map(p => p.category)))];
+
 function WorkContent() {
     const searchParams = useSearchParams();
     const [selectedCategory, setSelectedCategory] = useState("ALL");
@@ -88,8 +107,8 @@ function WorkContent() {
     }, [searchParams]);
 
     const filteredProjects = selectedCategory === "ALL"
-        ? PROJECTS
-        : PROJECTS.filter(p => p.category === selectedCategory);
+        ? ALL_PROJECTS
+        : ALL_PROJECTS.filter(p => p.category === selectedCategory);
 
     useEffect(() => {
         const handleEsc = (e: KeyboardEvent) => {
@@ -140,15 +159,15 @@ function WorkContent() {
                                         transition={{ duration: 0.3 }}
                                         key={project.id}
                                         onClick={() => {
+                                            const ytLink = project.youtubeLink || project.link;
                                             if (project.youtubeId) {
                                                 setSelectedVideo(project.youtubeId);
-                                            } else if (project.link) {
-                                                // Extract ID if possible or just fallback to link
-                                                const match = project.link.match(/v=([^&]+)/);
+                                            } else if (ytLink) {
+                                                const match = ytLink.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&?]+)/);
                                                 if (match) {
                                                     setSelectedVideo(match[1]);
                                                 } else {
-                                                    window.open(project.link, '_blank');
+                                                    window.open(ytLink, '_blank');
                                                 }
                                             }
                                         }}
