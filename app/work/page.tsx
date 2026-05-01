@@ -90,7 +90,7 @@ HARDCODED_PROJECTS.forEach(hp => {
     }
 });
 
-const CATEGORIES = ["ALL", ...Array.from(new Set(ALL_PROJECTS.map(p => p.category)))];
+const CATEGORIES = ["ALL", "WEB SERIES", "COMMERCIAL", "PERFORMANCE", "LIVE", "CORPORATE"];
 
 function WorkContent() {
     const searchParams = useSearchParams();
