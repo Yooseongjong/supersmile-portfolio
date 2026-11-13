@@ -8,6 +8,7 @@ import Preloader from '@/components/ui/Preloader';
 import Navbar from '@/components/layout/Navbar';
 import AudioProvider from '@/components/ui/AudioProvider';
 import CinematicBackground from '@/components/ui/CinematicBackground';
+import ChromeGate from '@/components/v2/ChromeGate';
 // import Intro from '@/components/ui/Intro';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
@@ -75,11 +76,12 @@ export default function RootLayout({
             <body className="font-sans bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-black">
                 <SmoothScrollProvider>
                     <AudioProvider>
-                        <CinematicBackground />
-                        <Preloader />
-                        {/* <Intro /> */}
-                        <CustomCursor />
-                        <Navbar />
+                        <ChromeGate>
+                            <CinematicBackground />
+                            <Preloader />
+                            <CustomCursor />
+                            <Navbar />
+                        </ChromeGate>
                         {children}
                     </AudioProvider>
                 </SmoothScrollProvider>

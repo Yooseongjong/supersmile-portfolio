@@ -27,3 +27,19 @@ ts-debug.log*
 
 # vercel
 .vercel
+
+# typescript & agent/scratch workspaces
+*.tsbuildinfo
+.agents/
+.handoff.md
+skills-lock.json
+/reel-2026-hyperframes/
+/remotion-showreel/
+/showreel-typo-overlay-hyperframes/
+/stamp-manifesto-hyperframes/
+
+# unreferenced intermediate video renders
+/public/videos/showreel-2026.mp4
+/public/videos/showreel-loop.mp4
+/public/videos/supersmile-showreel-2026.mp4
+/public/videos/supersmile-stamp-manifesto-2026.mp4

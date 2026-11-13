@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+import SafeImage from '@/components/ui/SafeImage';
 import { useAudio } from '@/components/ui/AudioProvider';
 
 interface ProjectCardProps {
@@ -12,77 +12,74 @@ interface ProjectCardProps {
     client?: string;
     released?: string;
     slogan?: string;
+    roles?: string[];
 }
 
-export default function ProjectCard({ title, category, image, index, client, released, slogan }: ProjectCardProps) {
+export default function ProjectCard({ title, category, image, index, client, released, slogan, roles }: ProjectCardProps) {
     const { playHover, playClick } = useAudio();
 
     return (
         <motion.div
-            className="group relative w-full aspect-video overflow-hidden rounded-lg bg-neutral-900 cursor-pointer border border-white/5 hover:border-primary transition-all duration-500 ease-out"
+            className="group relative w-full h-full min-h-[300px] aspect-video overflow-hidden rounded-sm bg-carbon cursor-pointer border border-white/10 hover:border-primary/70 transition-colors duration-500 ease-out"
             onMouseEnter={() => playHover()}
             onClick={() => playClick()}
         >
-            {/* Image with Cinematic Effect: Grayscale & Dimmed -> Color & Bright & Slow Zoom */}
+            {/* Thumbnail */}
             <div className="absolute inset-0 w-full h-full overflow-hidden">
-                <motion.div
-                    className="w-full h-full grayscale-[80%] brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-[2000ms] ease-out"
-                >
-                    {/* Standard Next.js Image */}
-                    <div className="w-full h-full bg-neutral-800 relative">
-                        <Image
+                <div className="w-full h-full bg-carbon relative transition-transform duration-700 ease-out group-hover:scale-105">
+                    {image && (
+                        <SafeImage
                             src={image}
                             alt={title}
                             fill
+                            sizes="(max-width: 768px) 100vw, 33vw"
                             className="object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500 z-20" />
-                    </div>
-                </motion.div>
+                    )}
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-20" />
+            </div>
+
+            {/* Play overlay */}
+            <div className="absolute inset-0 z-30 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <span className="font-mono text-xs md:text-sm tracking-[0.3em] text-white border border-white/60 px-5 py-3 backdrop-blur-sm">
+                    [ PLAY VIDEO <span className="text-primary">●</span> ]
+                </span>
+            </div>
+
+            {/* Top meta */}
+            <div className="absolute top-4 left-4 right-4 z-30 flex items-start justify-between gap-2">
+                <span className="font-mono text-[10px] tracking-[0.25em] text-white/70 bg-black/50 backdrop-blur-md px-2 py-1 border border-white/10">
+                    {String(index + 1).padStart(2, '0')} / {category}
+                </span>
             </div>
 
             {/* Content */}
-            <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end z-30">
-                <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                    {/* Category Tag */}
-                    <div className="mb-2 md:mb-3">
-                        <span className="text-primary font-bold tracking-widest text-[10px] md:text-xs uppercase bg-black/50 backdrop-blur-md px-2 py-1 rounded-sm border border-primary/20 shadow-[0_0_10px_rgba(34,197,94,0.2)]">
-                            {category}
-                        </span>
+            <div className="absolute inset-x-0 bottom-0 p-5 md:p-6 z-30">
+                {roles && roles.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5 mb-3">
+                        {roles.map((r) => (
+                            <span key={r} className="font-mono text-[9px] md:text-[10px] tracking-wider uppercase text-amber border border-amber/40 bg-black/50 px-2 py-0.5">
+                                [{r}]
+                            </span>
+                        ))}
                     </div>
+                )}
 
-                    {/* Slogan - Slide Up Effect */}
-                    {slogan && (
-                        <div className="overflow-hidden mb-1 md:mb-2">
-                            <h4 className="text-white/90 font-medium text-sm md:text-lg italic tracking-wide font-serif transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 delay-100">
-                                &quot;{slogan}&quot;
-                            </h4>
-                        </div>
-                    )}
+                {slogan && (
+                    <h4 className="text-white/60 text-xs md:text-sm italic font-serif mb-1 line-clamp-1">&quot;{slogan}&quot;</h4>
+                )}
 
-                    {/* Title */}
-                    <h3 className="font-display text-xl md:text-3xl font-bold text-white mb-2 md:mb-3 leading-tight line-clamp-2 shadow-black drop-shadow-lg">
-                        {title}
-                    </h3>
+                <h3 className="font-display text-lg md:text-2xl font-bold text-white leading-tight line-clamp-2 drop-shadow-lg">
+                    {title}
+                </h3>
 
-                    {/* Meta Info */}
-                    {(client || released) && (
-                        <div className="flex items-center gap-4 text-[10px] md:text-xs font-medium text-white/50 border-t border-white/10 pt-3 opacity-60 group-hover:opacity-100 transition-opacity duration-500">
-                            {client && (
-                                <p className="flex items-center">
-                                    <span className="text-white/30 uppercase tracking-wider mr-2">CLIENT</span>
-                                    <span className="text-white/70">{client}</span>
-                                </p>
-                            )}
-                            {released && (
-                                <p className="flex items-center">
-                                    <span className="text-white/30 uppercase tracking-wider mr-2">RELEASED</span>
-                                    <span className="text-white/70">{released}</span>
-                                </p>
-                            )}
-                        </div>
-                    )}
-                </div>
+                {(client || released) && (
+                    <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-[10px] md:text-xs text-white/50 border-t border-white/10 pt-3">
+                        {client && <span className="line-clamp-1"><span className="text-white/30 mr-2 tracking-wider">CLIENT</span>{client}</span>}
+                        {released && <span><span className="text-white/30 mr-2 tracking-wider">RELEASED</span>{released}</span>}
+                    </div>
+                )}
             </div>
         </motion.div>
     );

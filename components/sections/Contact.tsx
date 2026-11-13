@@ -32,14 +32,17 @@ export default function Contact() {
 
                     <div className="flex flex-col items-center justify-center gap-4">
                         <p className="text-white/40 text-sm tracking-widest uppercase">Or email us directly</p>
-                        <a href="mailto:haha3418@nate.com" className="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-bold rounded-full border border-white/20 hover:border-primary text-white transition-colors duration-300">
+                        <a href="mailto:seongjongman@gmail.com" className="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-bold rounded-full border border-white/20 hover:border-primary text-white transition-colors duration-300">
                             <span className="relative flex items-center gap-2 text-sm">
-                                haha3418@nate.com
+                                seongjongman@gmail.com
                                 <ArrowUpRight className="w-4 h-4" />
                             </span>
                         </a>
                     </div>
 
+                    <p className="mt-10 text-white/40 text-sm tracking-wide">
+                        인천광역시 연수구 송도과학로 56, 송도BT센터 210호
+                    </p>
 
                 </motion.div>
             </div>

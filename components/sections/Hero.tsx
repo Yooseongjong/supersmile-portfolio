@@ -1,129 +1,145 @@
 'use client';
 
-import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Button from '@/components/ui/Button';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
+const pad = (n: number) => String(n).padStart(2, '0');
+
+/** 실시간 타임코드 01:00:SS:FF (24fps) */
+function useTimecode() {
+    const [tc, setTc] = useState('01:00:00:00');
+    useEffect(() => {
+        const start = performance.now();
+        const id = setInterval(() => {
+            const elapsed = (performance.now() - start) / 1000;
+            const total = Math.floor(elapsed);
+            const frames = Math.floor((elapsed - total) * 24);
+            const s = total % 60;
+            const m = Math.floor(total / 60) % 60;
+            setTc(`01:${pad(m)}:${pad(s)}:${pad(frames)}`);
+        }, 1000 / 24);
+        return () => clearInterval(id);
+    }, []);
+    return tc;
+}
+
+const corner = 'absolute w-8 h-8 md:w-12 md:h-12 border-white/40';
 
 export default function Hero() {
-    const { scrollY } = useScroll();
+    const ref = useRef<HTMLElement>(null);
+    const tc = useTimecode();
+    const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
 
-    // Mouse Position State
-    const mouseX = useMotionValue(0);
-    const mouseY = useMotionValue(0);
-
-    // Smooth Spring Physics
-    const springConfig = { damping: 30, stiffness: 200, mass: 0.5 };
-    const mouseXSpring = useSpring(mouseX, springConfig);
-    const mouseYSpring = useSpring(mouseY, springConfig);
-
-    // Parallax Calculations
-    // Screen center is (0,0). Mouse movement creates inverse movement for the character
-    const charX = useTransform(mouseXSpring, [-0.5, 0.5], ["25px", "-25px"]);
-    const charY = useTransform(mouseYSpring, [-0.5, 0.5], ["25px", "-25px"]);
-    const charRotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["5deg", "-5deg"]);
-    const charRotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-5deg", "5deg"]);
-
-    // Text parallax
-    const textY = useTransform(scrollY, [0, 500], [0, 200]);
-    const opacity = useTransform(scrollY, [0, 300], [1, 0]);
-
-    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-        const { clientX, clientY, currentTarget } = e;
-        const { width, height, left, top } = currentTarget.getBoundingClientRect();
-
-        const xPct = (clientX - left) / width - 0.5;
-        const yPct = (clientY - top) / height - 0.5;
-
-        mouseX.set(xPct);
-        mouseY.set(yPct);
-    };
-
-    const handleMouseLeave = () => {
-        mouseX.set(0);
-        mouseY.set(0);
-    };
+    const titleY = useTransform(scrollYProgress, [0, 1], [0, 160]);
+    const titleScale = useTransform(scrollYProgress, [0, 1], [1, 0.92]);
+    const fade = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+    const bgScale = useTransform(scrollYProgress, [0, 1], [1.05, 1.2]);
 
     return (
         <section
+            ref={ref}
             id="home"
-            className="relative h-screen w-full overflow-hidden flex flex-col items-center justify-center bg-[#050505] [perspective:2000px]"
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
+            className="relative h-screen w-full overflow-hidden flex flex-col items-center justify-center bg-background"
         >
-            {/* LAYER 1: Static Background */}
-            <div className="absolute inset-0 z-0 select-none">
+            {/* Background */}
+            <motion.div style={{ scale: bgScale }} className="absolute inset-0 z-0 select-none">
                 <Image
                     src="/images/hero-studio-bg.jpg"
                     alt="Studio Background"
                     fill
-                    className="object-cover opacity-80"
+                    className="object-cover opacity-50 grayscale-[40%] contrast-110"
                     priority
-                    quality={100}
+                    quality={90}
                 />
-                {/* Vignette Overlay for focus */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)]" />
-                <div className="absolute inset-0 bg-black/30" /> {/* General darkening */}
-            </div>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(9,9,11,0.92)_100%)]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/60" />
+            </motion.div>
 
-            {/* LAYER 2: Interactive Character - Shifted Right on Desktop */}
-            <motion.div
-                className="absolute z-10 w-full h-full flex items-center justify-center md:justify-end md:pr-[15%] pointer-events-none"
-                style={{
-                    x: charX,
-                    y: charY,
-                    rotateX: charRotateX,
-                    rotateY: charRotateY,
-                    opacity
-                }}
-            >
-                <div className="relative w-[70vw] md:w-[50vw] aspect-square max-w-[1000px] md:translate-x-12">
-                    <Image
-                        src="/images/hero-smiley-char-new.png"
-                        alt="SuperSmile Character"
-                        fill
-                        className="object-contain drop-shadow-2xl"
-                        priority
-                    />
+            {/* Viewfinder HUD */}
+            <motion.div style={{ opacity: fade }} className="absolute inset-0 z-10 pointer-events-none p-4 md:p-10 font-mono text-[10px] md:text-xs tracking-[0.2em] text-white/70">
+                {/* 16:9 crop guide */}
+                <div className="absolute inset-x-4 md:inset-x-10 top-1/2 -translate-y-1/2 aspect-video max-h-[calc(100%-5rem)] border border-white/10" />
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6">
+                    <div className="absolute left-1/2 top-0 h-full w-px bg-white/30" />
+                    <div className="absolute top-1/2 left-0 w-full h-px bg-white/30" />
+                </div>
+
+                {/* corner brackets */}
+                <div className={`${corner} top-4 left-4 md:top-10 md:left-10 border-t border-l`} />
+                <div className={`${corner} top-4 right-4 md:top-10 md:right-10 border-t border-r`} />
+                <div className={`${corner} bottom-4 left-4 md:bottom-10 md:left-10 border-b border-l`} />
+                <div className={`${corner} bottom-4 right-4 md:bottom-10 md:right-10 border-b border-r`} />
+
+                {/* top-left: REC */}
+                <div className="absolute top-8 left-8 md:top-16 md:left-16 flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse" />
+                    <span className="text-white">REC</span>
+                </div>
+                {/* top-right: format */}
+                <div className="absolute top-8 right-8 md:top-16 md:right-16 text-right leading-relaxed">
+                    <div>24fps</div>
+                    <div className="text-white/40">4K UHD</div>
+                </div>
+                {/* bottom-left: DI */}
+                <div className="absolute bottom-8 left-8 md:bottom-16 md:left-16 leading-relaxed">
+                    <div className="text-amber">DIRECT DI</div>
+                    <div className="text-white/40">REC.709 / ACES</div>
+                </div>
+                {/* bottom-right: timecode */}
+                <div className="absolute bottom-8 right-8 md:bottom-16 md:right-16 text-right">
+                    <div className="text-white/40">TC</div>
+                    <div className="text-white tabular-nums text-sm md:text-base">{tc}</div>
                 </div>
             </motion.div>
 
-            {/* LAYER 3: Content Overlay - Centered Original Style */}
+            {/* Center: Kinetic Typography */}
             <motion.div
-                style={{ opacity, y: textY }}
-                className="z-20 flex flex-col items-center text-center space-y-8 max-w-6xl px-4 pointer-events-none relative mt-24 md:mt-0"
+                style={{ y: titleY, scale: titleScale, opacity: fade }}
+                className="z-20 flex flex-col items-center text-center px-6 max-w-[95vw] relative"
             >
-                <div>
-                    <motion.h1
-                        className="font-display text-7xl md:text-9xl font-bold tracking-tighter leading-none text-white mix-blend-overlay drop-shadow-[0_4px_24px_rgba(0,0,0,0.5)]"
-                        initial={{ y: 100, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                    >
-                        WE CRAFT
-                    </motion.h1>
-                    <motion.h1
-                        className="font-display text-7xl md:text-9xl font-bold tracking-tighter leading-none text-primary drop-shadow-[0_0_30px_rgba(212,255,0,0.3)]"
-                        initial={{ y: 100, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                    >
-                        SMILES.
-                    </motion.h1>
-                </div>
+                <h1 className="font-display font-extrabold tracking-tighter leading-[0.85] text-white text-[17vw] md:text-[12.5vw]">
+                    <span className="block overflow-hidden">
+                        <motion.span
+                            className="block"
+                            initial={{ y: '110%' }}
+                            animate={{ y: 0 }}
+                            transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+                        >
+                            WE CRAFT
+                        </motion.span>
+                    </span>
+                    <span className="block overflow-hidden">
+                        <motion.span
+                            className="block text-primary"
+                            initial={{ y: '110%' }}
+                            animate={{ y: 0 }}
+                            transition={{ duration: 1.1, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+                        >
+                            SMILES.
+                        </motion.span>
+                    </span>
+                </h1>
+
+                <motion.p
+                    className="mt-8 md:mt-10 text-sm md:text-xl text-white/70 max-w-2xl leading-relaxed break-keep"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.7 }}
+                >
+                    장르의 경계를 지우는 하이엔드 시네마틱 &amp; AI 크리에이티브 스튜디오
+                </motion.p>
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.6 }}
-                    className="flex flex-col md:flex-row gap-6 mt-8 pointer-events-auto"
+                    transition={{ duration: 0.6, delay: 0.9 }}
+                    className="flex flex-col md:flex-row gap-4 md:gap-6 mt-8 md:mt-10 pointer-events-auto"
                 >
                     <Link href="/work">
-                        <Button size="lg" variant="primary">
-                            View Our Work
-                        </Button>
+                        <Button size="lg" variant="primary">View Our Work</Button>
                     </Link>
                     <Button
                         size="lg"
@@ -136,23 +152,12 @@ export default function Hero() {
                 </motion.div>
             </motion.div>
 
-            {/* Scroll Indicator */}
+            {/* Scroll hint */}
             <motion.div
-                className="absolute bottom-10 z-20 text-white/50"
-                animate={{
-                    y: [0, 10, 0],
-                    opacity: [0.5, 1, 0.5]
-                }}
-                transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                }}
+                style={{ opacity: fade }}
+                className="absolute bottom-3 md:bottom-4 z-20 text-white/40 font-mono text-[10px] tracking-[0.3em] uppercase"
             >
-                <div className="flex flex-col items-center gap-2">
-                    <span className="text-xs tracking-widest uppercase font-medium">Scroll</span>
-                    <ChevronDown className="w-6 h-6" />
-                </div>
+                Scroll
             </motion.div>
         </section>
     );

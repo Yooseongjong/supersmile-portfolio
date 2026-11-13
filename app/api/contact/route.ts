@@ -2,11 +2,6 @@ import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import ContactEmail from '@/components/emails/ContactEmail';
 
-// Initialize Resend
-// NOTE: You will need to add RESEND_API_KEY to your .env.local file
-const apiKey = process.env.RESEND_API_KEY || 're_KpXepsF7_MmyaJNgu9ajMX1dY4ntWiHyA';
-const resend = new Resend(apiKey);
-
 export async function POST(request: Request) {
     try {
         const body = await request.json();
@@ -21,6 +16,7 @@ export async function POST(request: Request) {
         }
 
         // Check for API Key
+        const apiKey = process.env.RESEND_API_KEY;
         if (!apiKey) {
             console.error('RESEND_API_KEY is missing');
             return NextResponse.json(
@@ -29,9 +25,11 @@ export async function POST(request: Request) {
             );
         }
 
+        const resend = new Resend(apiKey);
+
         const data = await resend.emails.send({
             from: 'SuperSmile Contact <onboarding@resend.dev>', // Default Resend Testing Domain
-            to: ['haha3418@nate.com'], // User provided email
+            to: ['seongjongman@gmail.com'], // User provided email
             subject: `New Inquiry from ${name}`,
             react: ContactEmail({ name, email, message }),
         });

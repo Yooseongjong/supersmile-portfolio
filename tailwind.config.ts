@@ -9,11 +9,15 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
-                background: "#030303", // Ultra dark, almost black
+                background: "#09090B", // Deep Matte Black
                 foreground: "#ededed",
+                carbon: "#121215", // Carbon Surface
+                amber: {
+                    DEFAULT: "#F59E0B", // Warm Amber
+                },
                 primary: {
-                    DEFAULT: "#D4FF00", // Neon Yellow
-                    glow: "#D4FF0080", // Transparent for glow effects
+                    DEFAULT: "#EF4444", // ARRI Rec Red
+                    glow: "#EF444480", // Transparent for glow effects
                 },
                 secondary: "#1a1a1a",
                 accent: "#ffffff",
@@ -37,8 +41,8 @@ const config: Config = {
                     "100%": { transform: "translateY(0)", opacity: "1" },
                 },
                 pulseGlow: {
-                    "0%, 100%": { boxShadow: "0 0 10px #D4FF0040" },
-                    "50%": { boxShadow: "0 0 20px #D4FF0080" },
+                    "0%, 100%": { boxShadow: "0 0 10px #EF444440" },
+                    "50%": { boxShadow: "0 0 20px #EF444480" },
                 },
             },
             backgroundImage: {

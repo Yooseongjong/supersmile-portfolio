@@ -8,6 +8,13 @@ export interface Project {
     awards?: string;
     client?: string;
     youtubeLink?: string;
+    videoUrl?: string;
+    thumbnailUrl?: string;
+    roles?: string[];
+    slug?: string;
+    subCategory?: string;
+    tagline?: string;
+    relatedUrls?: string[];
 }
 
 export interface Service {
@@ -17,14 +24,117 @@ export interface Service {
 }
 
 export const projects: Project[] = [
+    // [임시 비활성화] 《루프 (LOOP)》 - 이번 주 최신 에피소드(본편) 업로드 후 링크/썸네일 추가하여 주석 해제
+    // {
+    //     id: 401,
+    //     slug: "work-loop-ai",
+    //     title: "AI 다큐드라마 시리즈 《루프 (LOOP)》",
+    //     category: "AI CINEMA",
+    //     subCategory: "AI DOCUDRAMA SERIES",
+    //     tagline: "Next-Gen AI Filmmaking & Storytelling",
+    //     image: "", // TODO: 썸네일 확정 시 지정 (예: https://i.ytimg.com/vi/[VIDEO_ID]/hqdefault.jpg)
+    //     thumbnailUrl: "",
+    //     description: "SK브로드밴드 발주 오리지널 AI 다큐드라마 시리즈. Google Flow Omni 1.2 기반의 시네마틱 생성형 AI 파이프라인과 정교한 연출·후반 DI를 결합한 차세대 하이브리드 콘텐츠입니다.",
+    //     year: "2026",
+    //     client: "SK브로드밴드 (SK broadband)",
+    //     roles: ["AI Directing", "Flow Omni 1.2", "DI & Post"],
+    //     youtubeLink: "" // TODO: 최신 본편 에피소드 링크
+    // },
+    {
+        id: 402,
+        slug: "work-maplestory-escape",
+        title: "MAPLESTORY ESCAPE (메이플스토리 방탈출 예능)",
+        category: "WEB SERIES",
+        subCategory: "BRANDED WEB VARIETY",
+        tagline: "High-Tension Survival Escape Game Show",
+        image: "https://i.ytimg.com/vi/TCPzqfWmoV8/hqdefault.jpg",
+        thumbnailUrl: "https://i.ytimg.com/vi/TCPzqfWmoV8/hqdefault.jpg",
+        description: "서바이벌 레전드 서출구·허성범 팀과 크리에이터 이라333·타요 팀의 맞대결을 그린 넥슨 메이플스토리 방탈출 프로모션 웹예능 시리즈(출사표 및 방탈출기 본편).",
+        year: "SEP 2026",
+        client: "NEXON (메이플스토리)",
+        roles: ["Planning", "Scriptwriting", "Directing", "Post-Production"],
+        youtubeLink: "https://www.youtube.com/watch?v=TCPzqfWmoV8",
+        videoUrl: "https://www.youtube.com/watch?v=TCPzqfWmoV8",
+        relatedUrls: [
+            "https://www.youtube.com/watch?v=wx3gOwKm_jg",
+            "https://www.youtube.com/watch?v=0SXc1yWMiC4",
+            "https://www.youtube.com/watch?v=OZ1a6J7k7Es"
+        ]
+    },
+    {
+        id: 403,
+        slug: "work-ena-weddinghall-post",
+        title: "ENA 《식장앞》 시리즈_POST",
+        category: "WEB SERIES",
+        subCategory: "WEB VARIETY SERIES (POST)",
+        tagline: "Trendy Talk Variety Post-Production",
+        image: "https://i.ytimg.com/vi/G6an5C6a0AA/hqdefault.jpg",
+        thumbnailUrl: "https://i.ytimg.com/vi/G6an5C6a0AA/hqdefault.jpg",
+        description: "ENA 오리지널 웹예능 시리즈 《식장앞》의 후반 종편(컷 편집, 예능 자막 디자인, DI 색보정) 전담 제작으로 프로그램의 리듬감과 비주얼 완성도를 극대화했습니다.",
+        year: "SEP 2026 (Series)",
+        client: "ENA",
+        roles: ["POST-PRODUCTION", "Editing", "Subtitles", "DI"],
+        youtubeLink: "https://www.youtube.com/watch?v=G6an5C6a0AA",
+        videoUrl: "https://www.youtube.com/watch?v=G6an5C6a0AA"
+    },
+    {
+        id: 404,
+        slug: "work-pubg-chicken-post",
+        title: "배틀그라운드 《치킨한마리》 시리즈_편집",
+        category: "WEB SERIES",
+        subCategory: "GAME WEB VARIETY (EDITING)",
+        tagline: "Dynamic Game Survival Editing",
+        image: "https://i.ytimg.com/vi/rjfb-qAA9pA/hqdefault.jpg",
+        thumbnailUrl: "https://i.ytimg.com/vi/rjfb-qAA9pA/hqdefault.jpg",
+        description: "곽범, 말왕, 이선민, 루다가 출연한 배틀그라운드 공식 웹예능 시리즈 《치킨한마리》의 편집 작업을 진행해 게임 예능 특유의 타격감과 텐션을 완성했습니다.",
+        year: "JUL 2026 (Series)",
+        client: "KRAFTON (PUBG: BATTLEGROUNDS Korea)",
+        roles: ["Editing"],
+        youtubeLink: "https://www.youtube.com/watch?v=rjfb-qAA9pA",
+        videoUrl: "https://www.youtube.com/watch?v=rjfb-qAA9pA"
+    },
+    {
+        id: 405,
+        slug: "work-develon-global-kr",
+        title: "DEVELON Global 브랜드 필름 & 《밀착꿀착》 시리즈",
+        category: "COMMERCIAL",
+        subCategory: "GLOBAL PRODUCT FILM & SERIES",
+        tagline: "Heavy Duty Dynamic Cinematography",
+        image: "https://i.ytimg.com/vi/SP7N_z9glng/hqdefault.jpg",
+        thumbnailUrl: "https://i.ytimg.com/vi/SP7N_z9glng/hqdefault.jpg",
+        description: "DEVELON Global 채널의 차세대 장비(DX400LC-9 등) 글로벌 단편 홍보 필름 및 국내 공식 채널의 대표 오리지널 시리즈 《밀착꿀착》을 지속적으로 전담 제작하고 있습니다.",
+        year: "2025 – 2026 (Ongoing)",
+        client: "HD현대인프라코어 (DEVELON Global / Korea)",
+        roles: ["Directing", "Cinematography", "Editing", "DI"],
+        youtubeLink: "https://www.youtube.com/watch?v=SP7N_z9glng",
+        videoUrl: "https://www.youtube.com/watch?v=SP7N_z9glng",
+        relatedUrls: ["https://www.youtube.com/watch?v=6iCg_BKARk4"]
+    },
+    {
+        id: 406,
+        slug: "work-musical-thedays",
+        title: "뮤지컬 《그날들》 숏폼 콘텐츠 전담 제작",
+        category: "COMMERCIAL",
+        subCategory: "SHORT-FORM CAMPAIGN",
+        tagline: "High-Impact Viral Short-Form Production",
+        image: "/assets/musical_thedays.jpg",
+        thumbnailUrl: "/assets/musical_thedays.jpg",
+        description: "대한민국 대표 창작 뮤지컬 《그날들》의 프로모션 숏폼(Shorts/Reels) 콘텐츠를 전담 제작하여 배우들의 매력과 공연의 현장감을 트렌디한 호흡으로 전달했습니다.",
+        year: "2026",
+        client: "뮤지컬 《그날들》",
+        roles: ["Short-Form Directing", "Shooting", "Editing", "DI"],
+        youtubeLink: "https://www.instagram.com/reel/DX5wvjrp2Ra/",
+        videoUrl: "https://www.instagram.com/reel/DX5wvjrp2Ra/"
+    },
     {
         id: 31,
         title: "미스트롯4 x 진탁막걸리 TVCF",
         category: "COMMERCIAL",
         image: "/assets/mistrot_jintak.jpg",
         description: "미스트롯4와 진탁막걸리가 함께한 TVCF 영상입니다.",
-        year: "2024",
+        year: "2026",
         client: "TV조선, 대학내일",
+        roles: ["Directing", "Editing", "In-House DI"],
         youtubeLink: "https://youtu.be/v8zzD7QmClU"
     },
     {
@@ -49,22 +159,26 @@ export const projects: Project[] = [
     },
     {
         id: 30,
-        title: "심심할 땐 과학 시즌2,3,4,5_후반작업",
+        title: "국립과천과학관 《심심할 땐 과학》 시리즈_POST",
         category: "Branded",
         image: "/assets/science_when_bored.png",
-        description: "국립과천과학관의 과학 예능 시리즈 '심심할 땐 과학'의 시즌 2, 3, 4, 5 후반작업을 담당했습니다. 유익한 과학 지식을 재미있고 이해하기 쉽게 편집했습니다.",
-        year: "2024",
+        description: "국립과천과학관 대표 유튜브 오리지널 시리즈(시즌 2~5 및 2026년 시즌 8)의 후반 작업(편집, 자막 디자인, DI 색보정)을 전담했습니다.",
+        year: "2025 – 2026 (Season 2~5, 8)",
         client: "국립과천과학관",
+        subCategory: "YOUTUBE ORIGINAL SERIES (POST)",
+        tagline: "Long-Running Edutainment Post-Production",
+        roles: ["POST-PRODUCTION", "Editing", "Subtitles", "DI"],
         youtubeLink: "https://youtu.be/DB7bCtOUerE"
     },
     {
         id: 29,
-        title: "디어마이엑스_후반작업",
+        title: "Dear My X (디어마이엑스)_POST",
         category: "Branded",
         image: "/assets/dear_my_x_v2.png",
         description: "ENA의 예능 '디어마이엑스' 후반작업에 참여했습니다. 감정선을 섬세하게 살리는 편집과 색보정으로 프로그램의 완성도를 높였습니다.",
-        year: "2024",
+        year: "DEC 2025",
         client: "ENA",
+        roles: ["POST-PRODUCTION", "Editing", "Subtitles", "DI"],
         youtubeLink: "https://youtu.be/mQMc-aAt0eA"
     },
     {
@@ -164,16 +278,6 @@ export const projects: Project[] = [
         image: "/assets/optimum_nutrition.png",
         description: "글렌비아(Optimum Nutrition)의 브랜드 가치를 전달하는 홍보영상입니다. 역동적인 비주얼로 브랜드 아이덴티티를 표현했습니다.",
         year: "2024",
-        client: "글렌비아",
-        youtubeLink: "https://youtu.be/NDuah2bAShc"
-    },
-    {
-        id: 18,
-        title: "이장군xOptimum Nutrition",
-        category: "Branded",
-        image: "/assets/lee_jang_kun_optimum.png",
-        description: "글렌비아(Optimum Nutrition)와 이장군 선수가 함께한 브랜드 캠페인 영상입니다. 강렬한 퍼포먼스와 브랜드 아이덴티티를 역동적으로 담았습니다.",
-        year: "2023",
         client: "글렌비아",
         youtubeLink: "https://youtu.be/NDuah2bAShc"
     },

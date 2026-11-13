@@ -18,6 +18,8 @@ export default function Footer() {
                 <div className="flex flex-col md:flex-row items-center gap-6">
                     <span>&copy; {currentYear} SUPERSMILE CREATIVE</span>
                     <span className="hidden md:inline">|</span>
+                    <span>인천광역시 연수구 송도과학로 56, 송도BT센터 210호</span>
+                    <span className="hidden md:inline">|</span>
                     <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
                     <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
                 </div>

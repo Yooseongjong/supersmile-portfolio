@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, PlayCircle, Share2, Calendar, Award, Briefcase } from 'lucide-react';
-import Image from 'next/image';
+import SafeImage from '@/components/ui/SafeImage';
 import Button from '@/components/ui/Button';
 
 import { Project } from '@/lib/data';
@@ -50,7 +50,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
 
                         {/* Visual Side (Left/Top) */}
                         <div className="relative w-full md:w-2/3 h-1/2 md:h-full bg-neutral-900">
-                            <Image
+                            <SafeImage
                                 src={project.image}
                                 alt={project.title}
                                 fill
