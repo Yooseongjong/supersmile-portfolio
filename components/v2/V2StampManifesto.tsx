@@ -86,7 +86,7 @@ export default function V2StampManifesto({ onOpenShowreel }: { onOpenShowreel: (
                     >
                         <iframe
                             ref={iframeRef}
-                            src="/kinetic-showreel/index.html?preview=1&v=3"
+                            src="/kinetic-showreel/index.html?preview=1&v=4"
                             title="SuperSmile Kinetic Typography Showreel Preview"
                             loading="lazy"
                             onLoad={() =>
