@@ -86,7 +86,7 @@ export default function VideoModal({ target, onClose }: { target: ModalTarget; o
     };
 
     const isKineticEmbed = target.kind === 'showreel' && reelMode === 'stomp20';
-    const videoSrc = '/videos/showreel-2026-typo.mp4';
+    const videoSrc = '/videos/showreel-2026-typo.mp4?v=2';
 
     return (
         <div className="fixed inset-0 z-[200] flex flex-col items-center justify-center p-4 md:p-10 bg-[#040406]/95 backdrop-blur-2xl animate-fade-in">

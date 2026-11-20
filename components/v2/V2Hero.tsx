@@ -62,7 +62,7 @@ export default function V2Hero({ onOpenShowreel }: { onOpenShowreel: () => void 
             >
                 <video
                     ref={setVideoEl}
-                    src="/videos/showreel-loop-typo.mp4"
+                    src="/videos/showreel-loop-typo.mp4?v=2"
                     poster="/videos/showreel-poster.jpg"
                     autoPlay
                     muted
@@ -74,7 +74,7 @@ export default function V2Hero({ onOpenShowreel }: { onOpenShowreel: () => void 
 
                 <video
                     ref={audioVideoRef}
-                    src="/videos/showreel-2026-typo.mp4"
+                    src="/videos/showreel-2026-typo.mp4?v=2"
                     preload="metadata"
                     loop
                     playsInline
