@@ -153,7 +153,7 @@ export default function VideoModal({ target, onClose }: { target: ModalTarget; o
                 {isKineticEmbed ? (
                     <iframe
                         key="kinetic-showreel-embed"
-                        src="/kinetic-showreel/index.html?autoplay=1"
+                        src="/kinetic-showreel/index.html?autoplay=1&v=3"
                         title="SuperSmile Kinetic Typography Showreel"
                         allow="autoplay; fullscreen"
                         allowFullScreen

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { Play } from 'lucide-react';
 
@@ -29,6 +29,28 @@ const STAMP_MANIFESTO_ITEMS = [
 
 export default function V2StampManifesto({ onOpenShowreel }: { onOpenShowreel: () => void }) {
     const [activeStamp, setActiveStamp] = useState(0);
+    const previewWrapRef = useRef<HTMLDivElement>(null);
+    const iframeRef = useRef<HTMLIFrameElement>(null);
+    const visibleRef = useRef(true);
+
+    useEffect(() => {
+        const el = previewWrapRef.current;
+        if (!el || typeof IntersectionObserver === 'undefined') return;
+        const obs = new IntersectionObserver(
+            (entries) => {
+                const entry = entries[0];
+                if (!entry) return;
+                visibleRef.current = entry.isIntersecting;
+                iframeRef.current?.contentWindow?.postMessage(
+                    { type: 'SUPERSMILE_VISIBLE', visible: entry.isIntersecting },
+                    '*'
+                );
+            },
+            { threshold: 0.05 }
+        );
+        obs.observe(el);
+        return () => obs.disconnect();
+    }, []);
 
     const handleStampClick = (idx: number, e: React.MouseEvent<HTMLButtonElement>) => {
         setActiveStamp(idx);
@@ -54,6 +76,7 @@ export default function V2StampManifesto({ onOpenShowreel }: { onOpenShowreel: (
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-center lg:items-stretch">
                     {/* SuperSmile Kinetic Typography MV Showreel (145 BPM) */}
                     <div
+                        ref={previewWrapRef}
                         onClick={onOpenShowreel}
                         role="button"
                         tabIndex={0}
@@ -62,9 +85,16 @@ export default function V2StampManifesto({ onOpenShowreel }: { onOpenShowreel: (
                         className="lg:col-span-7 w-full min-w-0 relative aspect-video overflow-hidden rounded-3xl border-2 border-white/20 bg-[#06070B] shadow-[0_28px_80px_rgba(0,0,0,0.85)] cursor-pointer group"
                     >
                         <iframe
-                            src="/kinetic-showreel/index.html?preview=1"
+                            ref={iframeRef}
+                            src="/kinetic-showreel/index.html?preview=1&v=3"
                             title="SuperSmile Kinetic Typography Showreel Preview"
-                            loading="eager"
+                            loading="lazy"
+                            onLoad={() =>
+                                iframeRef.current?.contentWindow?.postMessage(
+                                    { type: 'SUPERSMILE_VISIBLE', visible: visibleRef.current },
+                                    '*'
+                                )
+                            }
                             tabIndex={-1}
                             className="pointer-events-none h-full w-full border-0 transition-transform duration-500 group-hover:scale-[1.015]"
                         />
